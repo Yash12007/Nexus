@@ -1,0 +1,1583 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <meta charset=UTF-8>
+    <meta name=viewport content='width=device-width, initial-scale=1.0'>
+    <title>Nexus OS</title>
+    <link rel=icon href=https://icons.getbootstrap.com/assets/icons/box.svg>
+    <link href=https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css rel=stylesheet integrity=sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9 crossorigin=anonymous>
+</head>
+<style>
+body {
+	background: #00b4ff;
+	color: #333;
+	font: 100% Lato, Arial, Sans Serif;
+	height: 100vh;
+	margin: 0;
+	padding: 0;
+	overflow-x: hidden;
+}
+#background-wrap {
+    bottom: 0;
+	left: 0;
+	position: fixed;
+	right: 0;
+	top: 0;
+	z-index: -1;
+}
+@-webkit-keyframes animateBubble {
+    0% {
+        margin-top: 1000px;
+    }
+    100% {
+        margin-top: -100%;
+    }
+}
+@-moz-keyframes animateBubble {
+    0% {
+        margin-top: 1000px;
+    }
+    100% {
+        margin-top: -100%;
+    }
+}
+@keyframes animateBubble {
+    0% {
+        margin-top: 1000px;
+    }
+    100% {
+        margin-top: -100%;
+    }
+}
+@-webkit-keyframes sideWays {
+    0% {
+        margin-left:0px;
+    }
+    100% {
+        margin-left:50px;
+    }
+}
+@-moz-keyframes sideWays {
+    0% {
+        margin-left:0px;
+    }
+    100% {
+        margin-left:50px;
+    }
+}
+@keyframes sideWays {
+    0% {
+        margin-left:0px;
+    }
+    100% {
+        margin-left:50px;
+    }
+}
+.x1 {
+  -webkit-animation: animateBubble 25s linear infinite, sideWays 2s ease-in-out infinite alternate;
+	-moz-animation: animateBubble 25s linear infinite, sideWays 2s ease-in-out infinite alternate;
+	animation: animateBubble 25s linear infinite, sideWays 2s ease-in-out infinite alternate;
+	left: -5%;
+	top: 5%;
+	-webkit-transform: scale(0.6);
+	-moz-transform: scale(0.6);
+	transform: scale(0.6);
+}
+.x2 {
+  -webkit-animation: animateBubble 20s linear infinite, sideWays 4s ease-in-out infinite alternate;
+	-moz-animation: animateBubble 20s linear infinite, sideWays 4s ease-in-out infinite alternate;
+	animation: animateBubble 20s linear infinite, sideWays 4s ease-in-out infinite alternate;
+	left: 5%;
+	top: 80%;
+	-webkit-transform: scale(0.4);
+	-moz-transform: scale(0.4);
+	transform: scale(0.4);
+}
+.x3 {
+  -webkit-animation: animateBubble 28s linear infinite, sideWays 2s ease-in-out infinite alternate;
+	-moz-animation: animateBubble 28s linear infinite, sideWays 2s ease-in-out infinite alternate;
+	animation: animateBubble 28s linear infinite, sideWays 2s ease-in-out infinite alternate;
+	left: 10%;
+	top: 40%;
+	-webkit-transform: scale(0.7);
+	-moz-transform: scale(0.7);
+	transform: scale(0.7);
+}
+.x4 {
+  -webkit-animation: animateBubble 22s linear infinite, sideWays 3s ease-in-out infinite alternate;
+	-moz-animation: animateBubble 22s linear infinite, sideWays 3s ease-in-out infinite alternate;
+	animation: animateBubble 22s linear infinite, sideWays 3s ease-in-out infinite alternate;
+	left: 20%;
+	top: 0;
+	-webkit-transform: scale(0.3);
+	-moz-transform: scale(0.3);
+	transform: scale(0.3);
+}
+.x5 {
+  -webkit-animation: animateBubble 29s linear infinite, sideWays 4s ease-in-out infinite alternate;
+	-moz-animation: animateBubble 29s linear infinite, sideWays 4s ease-in-out infinite alternate;
+	animation: animateBubble 29s linear infinite, sideWays 4s ease-in-out infinite alternate;
+	left: 30%;
+	top: 50%;
+	-webkit-transform: scale(0.5);
+	-moz-transform: scale(0.5);
+	transform: scale(0.5);
+}
+.x6 {
+  -webkit-animation: animateBubble 21s linear infinite, sideWays 2s ease-in-out infinite alternate;
+	-moz-animation: animateBubble 21s linear infinite, sideWays 2s ease-in-out infinite alternate;
+	animation: animateBubble 21s linear infinite, sideWays 2s ease-in-out infinite alternate;
+	left: 50%;
+	top: 0;
+	-webkit-transform: scale(0.8);
+	-moz-transform: scale(0.8);
+	transform: scale(0.8);
+}
+.x7 {
+  -webkit-animation: animateBubble 20s linear infinite, sideWays 2s ease-in-out infinite alternate;
+	-moz-animation: animateBubble 20s linear infinite, sideWays 2s ease-in-out infinite alternate;
+	animation: animateBubble 20s linear infinite, sideWays 2s ease-in-out infinite alternate;
+	left: 65%;
+	top: 70%;
+	-webkit-transform: scale(0.4);
+	-moz-transform: scale(0.4);
+	transform: scale(0.4);
+}
+.x8 {
+  -webkit-animation: animateBubble 22s linear infinite, sideWays 3s ease-in-out infinite alternate;
+	-moz-animation: animateBubble 22s linear infinite, sideWays 3s ease-in-out infinite alternate;
+	animation: animateBubble 22s linear infinite, sideWays 3s ease-in-out infinite alternate;
+	left: 80%;
+	top: 10%;
+	-webkit-transform: scale(0.3);
+	-moz-transform: scale(0.3);
+	transform: scale(0.3);
+}
+.x9 {
+  -webkit-animation: animateBubble 29s linear infinite, sideWays 4s ease-in-out infinite alternate;
+	-moz-animation: animateBubble 29s linear infinite, sideWays 4s ease-in-out infinite alternate;
+	animation: animateBubble 29s linear infinite, sideWays 4s ease-in-out infinite alternate;
+	left: 90%;
+	top: 50%;
+	-webkit-transform: scale(0.6);
+	-moz-transform: scale(0.6);
+	transform: scale(0.6);
+}
+.x10 {
+  -webkit-animation: animateBubble 26s linear infinite, sideWays 2s ease-in-out infinite alternate;
+	-moz-animation: animateBubble 26s linear infinite, sideWays 2s ease-in-out infinite alternate;
+	animation: animateBubble 26s linear infinite, sideWays 2s ease-in-out infinite alternate;
+	left: 80%;
+	top: 80%;
+	-webkit-transform: scale(0.3);
+	-moz-transform: scale(0.3);
+	transform: scale(0.3);
+}
+.bubble {
+  -webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+  -webkit-box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2), inset 0px 10px 30px 5px rgba(255, 255, 255, 1);
+	-moz-box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2), inset 0px 10px 30px 5px rgba(255, 255, 255, 1);
+	box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2), inset 0px 10px 30px 5px rgba(255, 255, 255, 1);
+  height: 200px;
+	position: absolute;
+	width: 200px;
+}
+.bubble:after {
+    background: -moz-radial-gradient(center, ellipse cover,  rgba(255,255,255,0.5) 0%, rgba(255,255,255,0) 70%); /* FF3.6+ */
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(255,255,255,0.5)), color-stop(70%,rgba(255,255,255,0))); /* Chrome,Safari4+ */
+    background: -webkit-radial-gradient(center, ellipse cover,  rgba(255,255,255,0.5) 0%,rgba(255,255,255,0) 70%); /* Chrome10+,Safari5.1+ */
+    background: -o-radial-gradient(center, ellipse cover,  rgba(255,255,255,0.5) 0%,rgba(255,255,255,0) 70%); /* Opera 12+ */
+    background: -ms-radial-gradient(center, ellipse cover,  rgba(255,255,255,0.5) 0%,rgba(255,255,255,0) 70%); /* IE10+ */
+    background: radial-gradient(ellipse at center,  rgba(255,255,255,0.5) 0%,rgba(255,255,255,0) 70%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80ffffff', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    -webkit-box-shadow: inset 0 20px 30px rgba(255, 255, 255, 0.3);
+    -moz-box-shadow: inset 0 20px 30px rgba(255, 255, 255, 0.3);
+    box-shadow: inset 0 20px 30px rgba(255, 255, 255, 0.3);
+    content: "";
+      height: 180px;
+    left: 10px;
+    position: absolute;
+    width: 180px;
+}
+#flex-nav {
+    overflow: hidden;
+    display: flex;
+}
+#app {
+    opacity: 0.7;
+}
+body {
+    background-image: linear-gradient(to left, blue, #00ffff);
+    color: white;
+    font-family: Calibri;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    background-size: cover;
+}
+button,.nav-link {
+    background: 0;
+    color: white;
+    border-color: none;
+    border-width: 0;
+    cursor: pointer;
+}
+tr,table {
+    cursor: pointer;
+    background: black;
+    color: white;
+}
+#loading {
+    background-color: white;
+    width: 100%;
+    height: 3px;
+    position: absolute;
+    top: 55px;
+    left: 0;
+}
+#slider {
+    width: 30px;
+    position: absolute;
+    top: 0;
+    place-items: center;
+    height: 100%;
+    opacity: 0.7;
+    background: #000072;
+    right: 0;
+    display: grid;
+}
+#slide-text,.sliding-text {
+    transform: rotate(-90deg);
+}
+#message {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    height: 75%;
+    width: 100%;
+    place-items: center;
+    display: grid;
+}
+#app,#new-app {
+    position: absolute;
+    top: -50000px;
+    left: -50000px;
+    width: 80%;
+    height: 70%;
+    background-color: black;
+    border-radius: 10px;
+}
+.win-com {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+#top-head {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-family: Arial;
+}
+#header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 100%;
+}
+#main {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    height: 75%;
+    width: 100%;
+    place-items: center;
+    overflow: auto;
+}
+textarea {
+    background: 0;
+    border-color: none;
+    color: white;
+    border-width: none;
+    width: 80%;
+    height: 50%;
+    font-family: Calibri;
+    font-size: 14px;
+}
+#applications_desktop {
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    place-items: center;
+    display: grid;
+    margin: 5px;
+}
+#cir-img {
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    background: 0;
+    cursor: pointer;
+}
+input {
+    background: 0;
+    opacity: 0.7;
+    color: white;
+    border-color: white;
+    border-radius: 50px;
+    height: 25px;
+}
+.overlay {
+    position: absolute;
+    top: -50000px;
+    left: -50000px;
+    width: 100%;
+    height: 100%;
+    background: 0;
+    place-items: center;
+    display: grid;
+}
+.dialog-box {
+    position: fixed;
+    top: 25%;
+    width: 95%;
+    height: 50%;
+    background: black;
+    border-radius: 30px;
+    display: block;
+    place-items: center;
+    opacity: 0.7;
+}
+.permission-button {
+    margin: 30px;
+    background: 0;
+    border-color: white;
+    border-width: 1px;
+    color: white;
+    border-radius: 5px;
+}
+#settings {
+    position: absolute;
+    top: -50000px;
+    left: -50000px;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+}
+#win-settings {
+    position: absolute;
+    background: black;
+    color: white;
+    border-radius: 30px;
+    width: 80%;
+    height: 50%;
+    top: 25%;
+    display: grid;
+    place-items: center;
+    opacity: 0.7;
+}
+#flotter {
+    width: 100%;
+    height: 16px;
+    position: absolute;
+    left: 0;
+    top: 53px;
+    place-items: center;
+    display: grid;
+    margin: 5px;
+}
+code{
+    background: white;
+    color: black;
+    border-color: black;
+    border-width: 1px;
+    border-radius: 3px;
+}
+#right-click{
+    position: absolute;
+    top: -50000px;
+    left: -50000px;
+    width: 150px;
+    height: fit-content;
+    background-color: black;
+    opacity: 0.7;
+    border-radius: 10px;
+    border-color: white;
+    border-width: 1px;
+}
+</style>
+<body>
+<nav class='navbar navbar-expand-lg' data-bs-theme=dark>
+    <div class=container-fluid>
+        <a class=navbar-brand href>Nexus OS</a>
+        <button class=navbar-toggler type=button data-bs-toggle=collapse data-bs-target=#navbarNav aria-controls=navbarNav aria-expanded=false aria-label='Toggle navigation'>
+            <span class=navbar-toggler-icon></span>
+        </button>
+        <div class='collapse navbar-collapse' id=navbarNav>
+            <ul class=navbar-nav>
+                <li class=nav-item>
+                    <a class='nav-link active' id="ip">IP: --</a>
+                </li>
+                <li class=nav-item>
+                    <a class='nav-link active' id=cpu-load></a>
+                </li>
+                <li class=nav-item>
+                    <a class='nav-link active' id=memory-remaining></a>
+                </li>
+                <li class=nav-item>
+                    <a class='nav-link active' id=Storage></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div id=loading></div>
+<div id=message>
+    <div id=new>
+        <h1>
+            <i class='bi bi-box'></i>
+            <svg xmlns=http://www.w3.org/2000/svg width=50 height=50 fill=currentColor class='bi bi-box' viewBox='0 0 16 16'>
+                <path d='M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5 8 5.961 14.154 3.5 8.186 1.113zM15 4.239l-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923l6.5 2.6zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464L7.443.184z'/>
+            </svg>
+            Nexus OS
+        </h1>
+        <p>Virtual Operating System for everyone</p>
+    </div>
+</div>
+<div id=app>
+    <div id=hearder>
+        <b id=top-head class=Win-title_Nexus>Nexus OS - App</b>
+        <div class=win-com>
+            <button onclick=closeapp()>x</button>
+        </div>
+    </div>
+    <div id=main>
+        <b>Empty...</b>
+    </div>
+</div>
+<div id=new-app>
+    <div id=hearder>
+        <b id=top-head>Phonix Browser</b>
+        <div class=win-com>
+            <button onclick=closebrowser()>x</button>
+        </div>
+    </div>
+    <div id=main>
+        <iframe id=google src='https://www.google.com/search?igu=1' width=90% height=75% frameborder=0 style=position:absolute;left:15px;top:0></iframe>
+        <div style=position:absolute;left:10px;bottom:55px>
+            <button onclick=googlehomepage()>
+                <i class="bi bi-house"></i>
+                <svg xmlns=http://www.w3.org/2000/svg width=16 height=16 fill=currentColor class="bi bi-house" viewBox="0 0 16 16">
+                    <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5ZM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5 5 5Z"/>
+                </svg>
+            </button>
+            <input type=url id=urlforiframe placeholder='Search URL here...'>
+            <button onclick=searchurl()>
+                <i class="bi bi-search"></i>
+                <svg xmlns=http://www.w3.org/2000/svg width=16 height=16 fill=currentColor class="bi bi-search" viewBox="0 0 16 16">
+                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+</div>
+<div id=applications_desktop>
+    <div>
+        <button onclick=openapp()>
+            <i class='bi bi-box'></i>
+            <svg xmlns=http://www.w3.org/2000/svg width=16 height=16 fill=currentColor class='bi bi-box' viewBox='0 0 16 16'>
+                <path d='M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5 8 5.961 14.154 3.5 8.186 1.113zM15 4.239l-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923l6.5 2.6zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464L7.443.184z'/>
+            </svg>
+        </button>
+        <button onclick=Browser() id=cir-img>
+            <i class='bi bi-search'></i>
+            <svg xmlns=http://www.w3.org/2000/svg width=16 height=16 fill=currentColor class='bi bi-search' viewBox='0 0 16 16'>
+                <path d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'/>
+            </svg>
+        </button>
+        <button onclick=terminal() id=cir-img>
+            <i class='bi bi-terminal'></i>
+            <svg xmlns=http://www.w3.org/2000/svg width=16 height=16 fill=currentColor class='bi bi-terminal' viewBox='0 0 16 16'>
+                <path d='M6 9a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3A.5.5 0 0 1 6 9zM3.854 4.146a.5.5 0 1 0-.708.708L4.793 6.5 3.146 8.146a.5.5 0 1 0 .708.708l2-2a.5.5 0 0 0 0-.708l-2-2z'/>
+                <path d='M2 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2H2zm12 1a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1h12z'/>
+            </svg>
+        </button>
+        <button onclick=NovaStreamIDE() id=cir-img>
+            <i class='bi bi-code-square'></i>
+            <svg xmlns=http://www.w3.org/2000/svg width=16 height=16 fill=currentColor class='bi bi-code-square' viewBox='0 0 16 16'>
+                <path d='M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z'/>
+                <path d='M6.854 4.646a.5.5 0 0 1 0 .708L4.207 8l2.647 2.646a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 0 1 .708 0zm2.292 0a.5.5 0 0 0 0 .708L11.793 8l-2.647 2.646a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708 0z'/>
+            </svg>
+        </button>
+        <button onclick=ImageIdentifier()>
+            <i class='bi bi-image'></i>
+            <svg xmlns=http://www.w3.org/2000/svg width=16 height=16 fill=currentColor class='bi bi-image' viewBox='0 0 16 16'>
+                <path d='M6.002 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z'/>
+                <path d='M2.002 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2h-12zm12 1a1 1 0 0 1 1 1v6.5l-3.777-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12V3a1 1 0 0 1 1-1h12z'/>
+            </svg>
+        </button>
+        <button onclick="batterydetails()">
+            <i class='bi bi-battery-full'></i>
+            <svg xmlns=http://www.w3.org/2000/svg width=16 height=16 fill=currentColor class='bi bi-battery-full' viewBox='0 0 16 16'>
+                <path d='M2 6h10v4H2V6z'/>
+                <path d='M2 4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H2zm10 1a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h10zm4 3a1.5 1.5 0 0 1-1.5 1.5v-3A1.5 1.5 0 0 1 16 8z'/>
+            </svg>
+            <b id=percentage></b>
+        </button>
+        <button onclick="date()">
+            <p id="datetime"></p>
+        </button>
+    </div>
+</div>
+<div id=slider>
+    <button id=slide-text onclick=recent()>
+        <i class='bi bi-square'></i>
+        <svg xmlns=http://www.w3.org/2000/svg width=15 height=15 fill=currentColor class='bi bi-square' viewBox='0 0 16 16'>
+            <path d='M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z'/>
+        </svg>
+    </button>
+    <button id=slide-text onclick=home()>
+        <i class='bi bi-circle'></i>
+        <svg xmlns=http://www.w3.org/2000/svg width=15 height=15 fill=currentColor class='bi bi-circle' viewBox='0 0 16 16'>
+            <path d='M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z'/>
+        </svg>
+    </button>
+    <button id=slide-text onclick=backscreen()>
+        <i class='bi bi-caret-left'></i>
+        <svg xmlns=http://www.w3.org/2000/svg width=18 height=18 fill=currentColor class='bi bi-caret-left' viewBox='0 0 16 16'>
+            <path d='M10 12.796V3.204L4.519 8 10 12.796zm-.659.753-5.48-4.796a1 1 0 0 1 0-1.506l5.48-4.796A1 1 0 0 1 11 3.204v9.592a1 1 0 0 1-1.659.753z'/>
+        </svg>
+    </button>
+</div>
+<div id=settings>
+    <div id=win-settings>
+        <button style=position:absolute;top:10px;right:10px onclick=closesettings()>x</button>
+        <div>
+            <button onclick=showPermissionDialog()>Request Permissions</button>
+            <button onclick=changewallpaper()>Change wallpaper</button>
+            <button onclick=cleardata()>Clear Data</button>
+        </div>
+    </div>
+</div>
+<div class=overlay id=permissionDialog>
+    <div class=dialog-box>
+        <h3 style=margin:15px>Required Permissions</h3>
+        <b>Click to Allow permissions</b>
+        <button class=permission-button onclick=requestCameraPermission()>Camera</button>
+        <button class=permission-button onclick=requestMicrophonePermission()>Microphone</button>
+        <button class=permission-button onclick=closePermissionDialog()>Close</button>
+    </div>
+</div>
+<div id=flotter>
+    <div>
+        <button id=wifi></button>
+        <button onclick=bluetooth()>
+            <i class='bi bi-bluetooth'></i>
+            <svg xmlns=http://www.w3.org/2000/svg width=16 height=16 fill=currentColor class='bi bi-bluetooth' viewBox='0 0 16 16'>
+                <path fill-rule=evenodd d='m8.543 3.948 1.316 1.316L8.543 6.58V3.948Zm0 8.104 1.316-1.316L8.543 9.42v2.632Zm-1.41-4.043L4.275 5.133l.827-.827L7.377 6.58V1.128l4.137 4.136L8.787 8.01l2.745 2.745-4.136 4.137V9.42l-2.294 2.274-.827-.827L7.133 8.01ZM7.903 16c3.498 0 5.904-1.655 5.904-8.01 0-6.335-2.406-7.99-5.903-7.99C4.407 0 2 1.655 2 8.01 2 14.344 4.407 16 7.904 16Z'/>
+            </svg>
+        </button>
+        <button onclick=camera() id=cir-img>
+            <i class='bi bi-camera'></i>
+            <svg xmlns=http://www.w3.org/2000/svg width=16 height=16 fill=currentColor class='bi bi-camera' viewBox='0 0 16 16'>
+                <path d='M15 12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h1.172a3 3 0 0 0 2.12-.879l.83-.828A1 1 0 0 1 6.827 3h2.344a1 1 0 0 1 .707.293l.828.828A3 3 0 0 0 12.828 5H14a1 1 0 0 1 1 1v6zM2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4H2z'/>
+                <path d='M8 11a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5zm0 1a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zM3 6.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z'/>
+            </svg>
+        </button>
+        <button onclick=soundRecorder() id=cir-img>
+            <i class='bi bi-mic'></i>
+            <svg xmlns=http://www.w3.org/2000/svg width=16 height=16 fill=currentColor class='bi bi-mic' viewBox='0 0 16 16'>
+                <path d='M3.5 6.5A.5.5 0 0 1 4 7v1a4 4 0 0 0 8 0V7a.5.5 0 0 1 1 0v1a5 5 0 0 1-4.5 4.975V15h3a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1h3v-2.025A5 5 0 0 1 3 8V7a.5.5 0 0 1 .5-.5z'/>
+                <path d='M10 8a2 2 0 1 1-4 0V3a2 2 0 1 1 4 0v5zM8 0a3 3 0 0 0-3 3v5a3 3 0 0 0 6 0V3a3 3 0 0 0-3-3z'/>
+            </svg>
+        </button>
+        <button onclick="media()">
+            <i class="bi bi-music-note-list"></i>
+            <svg id='ico' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-music-note-list" viewBox="0 0 16 16">
+                <path d="M12 13c0 1.105-1.12 2-2.5 2S7 14.105 7 13s1.12-2 2.5-2 2.5.895 2.5 2z"/>
+                <path fill-rule="evenodd" d="M12 3v10h-1V3h1z"/>
+                <path d="M11 2.82a1 1 0 0 1 .804-.98l3-.6A1 1 0 0 1 16 2.22V4l-5 1V2.82z"/>
+                <path fill-rule="evenodd" d="M0 11.5a.5.5 0 0 1 .5-.5H4a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 .5 7H8a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 .5 3H8a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5z"/>
+            </svg>
+        </button>
+        <button onclick="imgview()">
+            <i class="bi bi-file-earmark-image"></i>
+            <svg id='ico' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-image" viewBox="0 0 16 16">
+                <path d="M6.502 7a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
+                <path d="M14 14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5L14 4.5V14zM4 1a1 1 0 0 0-1 1v10l2.224-2.224a.5.5 0 0 1 .61-.075L8 11l2.157-3.02a.5.5 0 0 1 .76-.063L13 10V4.5h-2A1.5 1.5 0 0 1 9.5 3V1H4z"/>
+            </svg>
+        </button>
+        <button onclick=settings()>
+            <i class='bi bi-gear'></i>
+            <svg xmlns=http://www.w3.org/2000/svg width=16 height=16 fill=currentColor class='bi bi-gear' viewBox='0 0 16 16'>
+                <path d='M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z'/>
+                <path d='M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115l.094-.319z'/>
+            </svg>
+        </button>
+        <button onclick="info()">
+            <i class="bi bi-info-circle"></i>
+            <svg id='ico' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16">
+                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+            </svg>
+        </button>
+    </div>
+</div>
+<div id="right-click">
+    <button onclick="refreshPage()">Refresh</button>
+    <br>
+    <button onclick="wallpaper()">Wallpaper</button>
+    <br>
+    <button onclick="terminal()">Open terminal</button>
+    <br>
+    <button onclick="jscompiler()">JS compiler</button>
+    <br>
+    <button onclick="Browser()">Browser</button>
+    <br>
+    <button onclick="NovaStreamIDE()">NovaStream IDE</button>
+    <br>
+    <button onclick="ImageIdentifier()">Identify Image</button>
+    <br>
+    <button onclick="f_ont()">Fonts</button>
+</div>
+<div id="background-wrap">
+    <div class="bubble x1"></div>
+    <div class="bubble x2"></div>
+    <div class="bubble x3"></div>
+    <div class="bubble x4"></div>
+    <div class="bubble x5"></div>
+    <div class="bubble x6"></div>
+    <div class="bubble x7"></div>
+    <div class="bubble x8"></div>
+    <div class="bubble x9"></div>
+    <div class="bubble x10"></div>
+</div>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.min.js></script>
+<script src=https://unpkg.com/ml5@latest/dist/ml5.min.js></script>
+<script src=https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js integrity=sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm crossorigin=anonymous></script>
+</body>
+<script>
+function jscompiler() {
+    document.getElementById("main").innerHTML = `
+    Status: <p id='output'></p>
+    <br>
+    <textarea id='inputCode'></textarea>
+    <br>
+    <button id='runButton'>Run</button>
+    `;
+
+    const inputCodeTextarea = document.getElementById('inputCode');
+    const runButton = document.getElementById('runButton');
+    const outputPre = document.getElementById('output');
+
+    runButton.addEventListener('click', () => {
+        const inputCode = inputCodeTextarea.value;
+        try {
+            const result = eval(inputCode);
+            outputPre.textContent = result;
+        } catch (error) {
+            outputPre.textContent = `Error: ${error.message}`;
+        }
+    });
+
+    document.getElementById("app").setAttribute("style", "top:10%; left:10%;");
+    document.getElementById("top-head").innerHTML = "JS compiler";
+}
+function f_ont() {
+    document.getElementById("main").innerHTML = `
+    <div class="container mt-4">
+        <label for="fontSelect">Select Font:</label>
+        <select id="fontSelect" class="form-select">
+            <option value="Arial, sans-serif">Arial</option>
+            <option value="Calibri">Calibri</option>
+            <option value="Verdana, sans-serif">Verdana</option>
+            <option value="Georgia, serif">Georgia</option>
+            <option value="Times New Roman, serif">Times New Roman</option>
+            <option value="Copperplate">Copperplate</option>
+            <option value="Courier New, monospace">Courier New</option>
+            <option value="Helvetica, sans-serif">Helvetica</option>
+            <option value="Impact, sans-serif">Impact</option>
+            <option value="Lucida Sans, sans-serif">Lucida Sans</option>
+            <option value="Palatino, serif">Palatino</option>
+            <option value="Arial Black, sans-serif">Arial Black</option>
+            <option value="Trebuchet MS, sans-serif">Trebuchet MS</option>
+            <option value="Century Gothic, sans-serif">Century Gothic</option>
+            <option value="Book Antiqua, serif">Book Antiqua</option>
+            <option value="Franklin Gothic Medium, sans-serif">Franklin Gothic Medium</option>
+            <option value="Garamond, serif">Garamond</option>
+            <option value="Arial Narrow, sans-serif">Arial Narrow</option>
+            <option value="Comic Sans MS, cursive">Comic Sans MS</option>
+            <option value="Impact, sans-serif">Impact</option>
+            <option value="Lucida Sans, sans-serif">Lucida Sans</option>
+            <option value="Palatino, serif">Palatino</option>
+            <option value="Arial Black, sans-serif">Arial Black</option>
+            <option value="Helvetica Neue, sans-serif">Helvetica Neue</option>
+            <option value="Courier, monospace">Courier</option>
+            <option value="Brush Script MT, cursive">Brush Script MT</option>
+            <option value="Futura, sans-serif">Futura</option>
+            <option value="Baskerville, serif">Baskerville</option>
+            <option value="Optima, sans-serif">Optima</option>
+            <option value="Rockwell, serif">Rockwell</option>
+            <option value="Tahoma, sans-serif">Tahoma</option>
+            <option value="Candara, sans-serif">Candara</option>
+            <option value="Arial Rounded MT Bold, sans-serif">Arial Rounded MT Bold</option>
+            <option value="Didot, serif">Didot</option>
+            <option value="Verdana Pro, sans-serif">Verdana Pro</option>
+            <option value="Copperplate Gothic, sans-serif">Copperplate Gothic</option>
+            <option value="Monaco, monospace">Monaco</option>
+            <option value="Century Schoolbook, serif">Century Schoolbook</option>
+            <option value="Cochin, serif">Cochin</option>
+            <option value="Myriad Pro, sans-serif">Myriad Pro</option>
+            <option value="Playfair Display, serif">Playfair Display</option>
+            <option value="Source Sans Pro, sans-serif">Source Sans Pro</option>
+            <option value="Trade Gothic, sans-serif">Trade Gothic</option>
+            <option value="Zapfino, cursive">Zapfino</option>
+        </select>
+    </div>
+    <div class="container mt-5">
+        <div class="form-group">
+            <label for="fontSizeSelect">Select Font Size:</label>
+            <select id="fontSizeSelect" class="form-control">
+                <option value="12">12px</option>
+                <option value="14">14px</option>
+                <option value="16">16px</option>
+                <option value="18">18px</option>
+                <option value="20">20px</option>
+                <option value="25">25px</option>
+                <option value="30">30px</option>
+                <option value="35">35px</option>
+                <option value="40">40px</option>
+                <option value="45">45px</option>
+                <option value="50">50px</option>
+                <option value="55">55px</option>
+                <option value="60">60px</option>
+                <option value="65">65px</option>
+                <option value="70">70px</option>
+            </select>
+        </div>
+        <div class="mt-3">
+            <p id="sampleText">Sample Text with selected font size.</p>
+        </div>
+    </div>
+    `;
+    document.getElementById("app").setAttribute("style", "top:10%; left:10%;");
+    document.getElementById("top-head").innerHTML = "Fonts";
+    const fontSelect = document.getElementById('fontSelect');
+    fontSelect.addEventListener('change', function() {
+        const selectedFont = fontSelect.value;
+        document.body.style.fontFamily = selectedFont;
+    });
+    const fontSizeSelect = document.getElementById('fontSizeSelect');
+    fontSizeSelect.addEventListener('change', function() {
+        const selectedSize = fontSizeSelect.value;
+        document.body.style.fontSize = `${selectedSize}px`;
+    });
+}
+function refreshPage() {
+  location.reload();
+}
+document.addEventListener('contextmenu', function(event) {
+  if (event.which === 93 || event.button === 2) {
+    event.preventDefault();
+    const rightClickBox = document.getElementById("right-click");
+    rightClickBox.style.display = "block";
+    rightClickBox.style.left = (event.clientX + 5) + "px"; // Add a small offset to avoid overlap
+    rightClickBox.style.top = (event.clientY + 5) + "px";  // Add a small offset to avoid overlap
+  }
+});
+document.addEventListener('click', function() {
+  document.getElementById("right-click").style ="top:-50000px; left:-50000px;";
+});
+function datetime(){
+    document.getElementById("datetime").innerHTML= new Date().toLocaleTimeString();
+    setTimeout(datetime, 1000);
+}
+datetime();
+function googlehomepage() {
+    document.getElementById("google").src = "https://www.google.com/search?igu=1";
+}
+async function bluetooth() {
+    try {
+        const device = await navigator.bluetooth.requestDevice({ acceptAllDevices: true, optionalServices: ["battery_service"] });
+        const outputDiv = document.getElementById("main");
+        outputDiv.innerHTML = `<p>Device Name:${device.name}</p><p>Device ID:${device.id}</p><p>Connected:${device.gatt.connected}</p><p>Supported Services:${device.uuids.join(", ")}</p>`;
+    } catch (error) {
+        console.error("Error accessing Bluetooth:", error);
+    }
+}
+let classifier;
+try {
+    classifier = ml5.imageClassifier("MobileNet");
+} catch (error) {
+    console.log(error);
+}
+function date(){
+    document.getElementById("main").innerHTML = `Date & Time: ${Date()}`;
+    document.getElementById("app").setAttribute("style", "top:10%; left:10%;");
+    document.getElementById("top-head").innerHTML = "Date Time";
+}
+function ImageIdentifier() {
+    document.getElementById("main").innerHTML = `<input type='file'id='imgiden'><img id='identifyimg'width='100px'height='100px'><br><p id='imgdes'></p>`;
+    document.getElementById("app").setAttribute("style", "top:10%; left:10%;");
+    document.getElementById("top-head").innerHTML = "Image Identifier";
+    document.getElementById("imgiden").addEventListener("change", (event) => {
+        identify(event);
+    });
+}
+function gotResult(error, results) {
+    const element = document.getElementById("imgdes");
+    if (error) {
+        element.innerHTML = error;
+    } else {
+        let num = results[0].confidence * 100;
+        element.innerHTML = results[0].label + "<br>Probability: " + num.toFixed(2) + "%";
+    }
+}
+function identify(event) {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+    reader.onload = function (e) {
+        const image = document.getElementById("identifyimg");
+        image.src = e.target.result;
+        classifier.classify(document.getElementById("identifyimg"), gotResult);
+    };
+    if (file) {
+        reader.readAsDataURL(file);
+    }
+}
+function wifi() {
+    if (navigator.onLine) {
+        document.getElementById("wifi").innerHTML = `
+        <i class='bi bi-wifi'></i>
+        <svg id='ico'  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-wifi" viewBox="0 0 16 16">
+            <path d="M15.384 6.115a.485.485 0 0 0-.047-.736A12.444 12.444 0 0 0 8 3C5.259 3 2.723 3.882.663 5.379a.485.485 0 0 0-.048.736.518.518 0 0 0 .668.05A11.448 11.448 0 0 1 8 4c2.507 0 4.827.802 6.716 2.164.205.148.49.13.668-.049z"/>
+            <path d="M13.229 8.271a.482.482 0 0 0-.063-.745A9.455 9.455 0 0 0 8 6c-1.905 0-3.68.56-5.166 1.526a.48.48 0 0 0-.063.745.525.525 0 0 0 .652.065A8.46 8.46 0 0 1 8 7a8.46 8.46 0 0 1 4.576 1.336c.206.132.48.108.653-.065zm-2.183 2.183c.226-.226.185-.605-.1-.75A6.473 6.473 0 0 0 8 9c-1.06 0-2.062.254-2.946.704-.285.145-.326.524-.1.75l.015.015c.16.16.407.19.611.09A5.478 5.478 0 0 1 8 10c.868 0 1.69.201 2.42.56.203.1.45.07.61-.091l.016-.015zM9.06 12.44c.196-.196.198-.52-.04-.66A1.99 1.99 0 0 0 8 11.5a1.99 1.99 0 0 0-1.02.28c-.238.14-.236.464-.04.66l.706.706a.5.5 0 0 0 .707 0l.707-.707z"/>
+        </svg>
+        `;
+    } else {
+        document.getElementById("wifi").innerHTML = `
+        <i class='bi bi-wifi-off'></i>
+        <svg id='ico'  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-wifi-off" viewBox="0 0 16 16">
+            <path d="M10.706 3.294A12.545 12.545 0 0 0 8 3C5.259 3 2.723 3.882.663 5.379a.485.485 0 0 0-.048.736.518.518 0 0 0 .668.05A11.448 11.448 0 0 1 8 4c.63 0 1.249.05 1.852.148l.854-.854zM8 6c-1.905 0-3.68.56-5.166 1.526a.48.48 0 0 0-.063.745.525.525 0 0 0 .652.065 8.448 8.448 0 0 1 3.51-1.27L8 6zm2.596 1.404.785-.785c.63.24 1.227.545 1.785.907a.482.482 0 0 1 .063.745.525.525 0 0 1-.652.065 8.462 8.462 0 0 0-1.98-.932zM8 10l.933-.933a6.455 6.455 0 0 1 2.013.637c.285.145.326.524.1.75l-.015.015a.532.532 0 0 1-.611.09A5.478 5.478 0 0 0 8 10zm4.905-4.905.747-.747c.59.3 1.153.645 1.685 1.03a.485.485 0 0 1 .047.737.518.518 0 0 1-.668.05 11.493 11.493 0 0 0-1.811-1.07zM9.02 11.78c.238.14.236.464.04.66l-.707.706a.5.5 0 0 1-.707 0l-.707-.707c-.195-.195-.197-.518.04-.66A1.99 1.99 0 0 1 8 11.5c.374 0 .723.102 1.021.28zm4.355-9.905a.53.53 0 0 1 .75.75l-10.75 10.75a.53.53 0 0 1-.75-.75l10.75-10.75z"/>
+        </svg>
+        `;
+    }
+    setTimeout(wifi, 1000);
+}
+wifi();
+if ("Notification" in window) {
+    if (Notification.permission === "granted") {
+    } else if (Notification.permission !== "denied") {
+        Notification.requestPermission().then((permission) => {
+            if (permission === "granted") {
+                if (Notification.permission === "granted") {
+                    const notification = new Notification("Nexus OS", { body: "Welcome to Nexus OS, If you want to contact us click here.", icon: "https://icons.getbootstrap.com/assets/icons/box.svg" });
+                    notification.onclick = function () {
+                        window.open("https://yash12007.github.io/Max/contact.html", "_blank");
+                    };
+                }
+            } else {
+                console.log("Permission for notifications has been denied.");
+            }
+        });
+    }
+} else {
+    console.log("Notifications are not supported in this browser.");
+}
+function cleardata() {
+    if (confirm("Are you sure want to Clear all Data saved by Nexus OS?") == true) {
+        localStorage.clear();
+    } else {
+        console.log("Data not cleared");
+    }
+}
+function closesettings() {
+    document.getElementById("settings").setAttribute("style", "top:-50000px; left:-50000px;");
+}
+function settings() {
+    document.getElementById("settings").setAttribute("style", "top:50px; left:0px;");
+}
+function recent() {
+    document.getElementById("app").setAttribute("style", "top:10%; left:10%;");
+}
+function backscreen() {
+    closeapp();
+    closebrowser();
+    closesettings();
+}
+function searchurl() {
+    const url = document.getElementById("urlforiframe").value;
+    document.getElementById("google").src = url;
+}
+function openapp() {
+    document.getElementById("main").innerHTML = `
+    <table class='table table-dark'>
+        <thead>
+            <tr>
+                <th scope='col'>Sr.no.</th>
+                <th scope='col'>Icon</th>
+                <th scope='col'>Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr onclick='Browser()'>
+                <th scope='row'>1</th>
+                <td>
+                    <i class='bi bi-search'></i>
+                    <svg id='ico'  xmlns='http://www.w3.org/2000/svg'width='16'height='16'fill='currentColor'class='bi bi-search'viewBox='0 0 16 16'>
+                        <path d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'/>
+                    </svg></td>
+                <td>Phonix Browser</td>
+            </tr>
+            <tr onclick='terminal()'>
+                <th scope='row'>2</th>
+                <td>
+                    <i class='bi bi-terminal'></i>
+                    <svg id='ico'  xmlns='http://www.w3.org/2000/svg'width='16'height='16'fill='currentColor'class='bi bi-terminal'viewBox='0 0 16 16'>
+                        <path d='M6 9a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3A.5.5 0 0 1 6 9zM3.854 4.146a.5.5 0 1 0-.708.708L4.793 6.5 3.146 8.146a.5.5 0 1 0 .708.708l2-2a.5.5 0 0 0 0-.708l-2-2z'/>
+                        <path d='M2 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2H2zm12 1a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1h12z'/>
+                    </svg>
+                </td>
+                <td>Terminal</td>
+            </tr>
+            <tr onclick='camera()'>
+                <th scope='row'>3</th>
+                <td>
+                    <i class='bi bi-camera'></i>
+                    <svg id='ico'  xmlns='http://www.w3.org/2000/svg'width='16'height='16'fill='currentColor'class='bi bi-camera'viewBox='0 0 16 16'>
+                        <path d='M15 12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h1.172a3 3 0 0 0 2.12-.879l.83-.828A1 1 0 0 1 6.827 3h2.344a1 1 0 0 1 .707.293l.828.828A3 3 0 0 0 12.828 5H14a1 1 0 0 1 1 1v6zM2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4H2z'/>
+                        <path d='M8 11a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5zm0 1a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zM3 6.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z'/>
+                    </svg>
+                </td>
+                <td>Camera</td>
+            </tr>
+            <tr onclick='soundRecorder()'>
+                <th scope='row'>4</th>
+                <td>
+                    <i class='bi bi-mic'></i>
+                    <svg id='ico'  xmlns='http://www.w3.org/2000/svg'width='16'height='16'fill='currentColor'class='bi bi-mic'viewBox='0 0 16 16'>
+                        <path d='M3.5 6.5A.5.5 0 0 1 4 7v1a4 4 0 0 0 8 0V7a.5.5 0 0 1 1 0v1a5 5 0 0 1-4.5 4.975V15h3a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1h3v-2.025A5 5 0 0 1 3 8V7a.5.5 0 0 1 .5-.5z'/>
+                        <path d='M10 8a2 2 0 1 1-4 0V3a2 2 0 1 1 4 0v5zM8 0a3 3 0 0 0-3 3v5a3 3 0 0 0 6 0V3a3 3 0 0 0-3-3z'/>
+                    </svg>
+                </td>
+                <td>Sound Recorder</td>
+            </tr>
+            <tr onclick='NovaStreamIDE()'>
+                <th scope='row'>5</th>
+                <td>
+                    <i class='bi bi-code-square'></i>
+                    <svg id='ico'  xmlns='http://www.w3.org/2000/svg'width='16'height='16'fill='currentColor'class='bi bi-code-square'viewBox='0 0 16 16'>
+                        <path d='M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z'/>
+                        <path d='M6.854 4.646a.5.5 0 0 1 0 .708L4.207 8l2.647 2.646a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 0 1 .708 0zm2.292 0a.5.5 0 0 0 0 .708L11.793 8l-2.647 2.646a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708 0z'/>
+                    </svg>
+                </td>
+                <td>NovaStream IDE</td>
+            </tr>
+            <tr onclick='settings()'>
+                <th scope='row'>6</th>
+                <td>
+                    <i class='bi bi-gear'></i>
+                    <svg id='ico'  xmlns='http://www.w3.org/2000/svg'width='16'height='16'fill='currentColor'class='bi bi-gear'viewBox='0 0 16 16'>
+                        <path d='M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z'/>
+                        <path d='M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115l.094-.319z'/>
+                    </svg>
+                </td>
+                <td>Settings</td>
+            </tr>
+            <tr onclick='ImageIdentifier()'>
+                <th scope='row'>7</th>
+                <td>
+                    <i class='bi bi-image'></i>
+                    <svg id='ico'  xmlns='http://www.w3.org/2000/svg'width='16'height='16'fill='currentColor'class='bi bi-image'viewBox='0 0 16 16'>
+                        <path d='M6.002 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z'/>
+                        <path d='M2.002 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2h-12zm12 1a1 1 0 0 1 1 1v6.5l-3.777-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12V3a1 1 0 0 1 1-1h12z'/>
+                    </svg>
+                </td>
+            <td>Image Identifier</td>
+            </tr>
+            <tr onclick='changewallpaper()'>
+                <th scope='row'>8</th>
+                <td>
+                    <i class='bi bi-images'></i>
+                    <svg id='ico'  xmlns='http://www.w3.org/2000/svg'width='16'height='16'fill='currentColor'class='bi bi-images'viewBox='0 0 16 16'>
+                        <path d='M4.502 9a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z'/>
+                        <path d='M14.002 13a2 2 0 0 1-2 2h-10a2 2 0 0 1-2-2V5A2 2 0 0 1 2 3a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v8a2 2 0 0 1-1.998 2zM14 2H4a1 1 0 0 0-1 1h9.002a2 2 0 0 1 2 2v7A1 1 0 0 0 15 11V3a1 1 0 0 0-1-1zM2.002 4a1 1 0 0 0-1 1v8l2.646-2.354a.5.5 0 0 1 .63-.062l2.66 1.773 3.71-3.71a.5.5 0 0 1 .577-.094l1.777 1.947V5a1 1 0 0 0-1-1h-10z'/>
+                    </svg>
+                </td>
+                <td>Wallpaper</td>
+            </tr>
+            <tr onclick='cleardata()'>
+                <th scope='row'>9</th>
+                <td>
+                    <i class='bi bi-database-slash'></i>
+                    <svg id='ico'  xmlns='http://www.w3.org/2000/svg'width='16'height='16'fill='currentColor'class='bi bi-database-slash'viewBox='0 0 16 16'>
+                        <path d='M13.879 10.414a2.501 2.501 0 0 0-3.465 3.465l3.465-3.465Zm.707.707-3.465 3.465a2.501 2.501 0 0 0 3.465-3.465Zm-4.56-1.096a3.5 3.5 0 1 1 4.949 4.95 3.5 3.5 0 0 1-4.95-4.95Z'/>
+                        <path d='M12.096 6.223A4.92 4.92 0 0 0 13 5.698V7c0 .289-.213.654-.753 1.007a4.493 4.493 0 0 1 1.753.25V4c0-1.007-.875-1.755-1.904-2.223C11.022 1.289 9.573 1 8 1s-3.022.289-4.096.777C2.875 2.245 2 2.993 2 4v9c0 1.007.875 1.755 1.904 2.223C4.978 15.71 6.427 16 8 16c.536 0 1.058-.034 1.555-.097a4.525 4.525 0 0 1-.813-.927C8.5 14.992 8.252 15 8 15c-1.464 0-2.766-.27-3.682-.687C3.356 13.875 3 13.373 3 13v-1.302c.271.202.58.378.904.525C4.978 12.71 6.427 13 8 13h.027a4.552 4.552 0 0 1 0-1H8c-1.464 0-2.766-.27-3.682-.687C3.356 10.875 3 10.373 3 10V8.698c.271.202.58.378.904.525C4.978 9.71 6.427 10 8 10c.262 0 .52-.008.774-.024a4.525 4.525 0 0 1 1.102-1.132C9.298 8.944 8.666 9 8 9c-1.464 0-2.766-.27-3.682-.687C3.356 7.875 3 7.373 3 7V5.698c.271.202.58.378.904.525C4.978 6.711 6.427 7 8 7s3.022-.289 4.096-.777ZM3 4c0-.374.356-.875 1.318-1.313C5.234 2.271 6.536 2 8 2s2.766.27 3.682.687C12.644 3.125 13 3.627 13 4c0 .374-.356.875-1.318 1.313C10.766 5.729 9.464 6 8 6s-2.766-.27-3.682-.687C3.356 4.875 3 4.373 3 4Z'/>
+                    </svg>
+                </td>
+                <td>Clear data</td>
+            </tr>
+            <tr onclick='media()'>
+                <th scope='row'>10</th>
+                <td>
+                    <i class="bi bi-music-note-list"></i>
+                    <svg id='ico'  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-music-note-list" viewBox="0 0 16 16">
+                        <path d="M12 13c0 1.105-1.12 2-2.5 2S7 14.105 7 13s1.12-2 2.5-2 2.5.895 2.5 2z"/>
+                        <path fill-rule="evenodd" d="M12 3v10h-1V3h1z"/>
+                        <path d="M11 2.82a1 1 0 0 1 .804-.98l3-.6A1 1 0 0 1 16 2.22V4l-5 1V2.82z"/>
+                        <path fill-rule="evenodd" d="M0 11.5a.5.5 0 0 1 .5-.5H4a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 .5 7H8a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 .5 3H8a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5z"/>
+                    </svg>
+                </td>
+                <td>Media Player</td>
+            </tr>
+            <tr onclick='imgview()'>
+                <th scope='row'>11</th>
+                <td>
+                    <i class="bi bi-file-earmark-image"></i>
+                    <svg id='ico'  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-image" viewBox="0 0 16 16">
+                        <path d="M6.502 7a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
+                        <path d="M14 14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5L14 4.5V14zM4 1a1 1 0 0 0-1 1v10l2.224-2.224a.5.5 0 0 1 .61-.075L8 11l2.157-3.02a.5.5 0 0 1 .76-.063L13 10V4.5h-2A1.5 1.5 0 0 1 9.5 3V1H4z"/>
+                    </svg>
+                </td>
+                <td>Image viewer</td>
+            </tr>
+        </tbody>
+    </table>`;
+    document.getElementById("app").setAttribute("style", "top:10%; left:10%;");
+    document.getElementById("top-head").innerHTML = "Applications";
+}
+function imgview() {
+    document.getElementById("main").innerHTML = `
+        <img height="50%" id='viewimg'>
+        <br>
+        <input id='imgfile' type='file'>
+    `;
+    document.getElementById("app").setAttribute("style", "top:10%; left:10%;");
+    document.getElementById("top-head").innerHTML = "Image viewer";
+    const fileInput = document.getElementById("imgfile");
+    const imageView = document.getElementById("viewimg");
+    fileInput.addEventListener("change", (event) => {
+        const selectedFile = event.target.files[0];
+        if (selectedFile) {
+            const imageURL = URL.createObjectURL(selectedFile);
+            imageView.src = imageURL;
+        }
+    });
+}
+function media(){
+    document.getElementById("main").innerHTML =`<video id='mediavideo' height="50%" controls></video>
+    <br>
+    <p>Use .mp3 or .mp4 file to play</p>
+    <br>
+    <div style='display:flex;'>
+        <input id='mediafile' type='file'>
+        <button id='playmedia'>
+            <i class="bi bi-play-circle"></i>
+            <svg id='ico'  xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-play-circle" viewBox="0 0 16 16">
+                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                <path d="M6.271 5.055a.5.5 0 0 1 .52.038l3.5 2.5a.5.5 0 0 1 0 .814l-3.5 2.5A.5.5 0 0 1 6 10.5v-5a.5.5 0 0 1 .271-.445z"/>
+            </svg>
+        </button>
+        <button id='mutemedia'>
+            <i class="bi bi-volume-mute-fill"></i>
+            <svg id='ico'  xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-volume-mute-fill" viewBox="0 0 16 16">
+                <path d="M6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06zm7.137 2.096a.5.5 0 0 1 0 .708L12.207 8l1.647 1.646a.5.5 0 0 1-.708.708L11.5 8.707l-1.646 1.647a.5.5 0 0 1-.708-.708L10.793 8 9.146 6.354a.5.5 0 1 1 .708-.708L11.5 7.293l1.646-1.647a.5.5 0 0 1 .708 0z"/>
+            </svg>
+        </button>
+        <audio id="audiotag" style='opacity:0;'></audio>
+    </div>
+    `;
+    document.getElementById("app").setAttribute("style", "top:10%; left:10%;");
+    document.getElementById("top-head").innerHTML = "Media player";
+    const mediaFileInput = document.getElementById("mediafile");
+    const mediaVideo = document.getElementById("mediavideo");
+    const audio = document.getElementById("audiotag");
+    const playButton = document.getElementById("playmedia");
+    const muteButton = document.getElementById("mutemedia");
+    mediaFileInput.addEventListener("input", () => {
+        const selectedFile = mediaFileInput.files[0];
+        if (selectedFile) {
+            if (selectedFile.type.includes("audio")) {
+                const fileURL = URL.createObjectURL(selectedFile);
+                mediaVideo.src = "";
+                audio.src=fileURL;
+            } else if (selectedFile.type.includes("video")) {
+                const fileURL = URL.createObjectURL(selectedFile);
+                mediaVideo.src = fileURL;
+                audio.src="";
+            }
+        }
+    });
+    playButton.addEventListener("click", () => {
+        if (mediaVideo.paused, audio.paused) {
+            playButton.innerHTML=`
+            <i class="bi bi-pause-circle"></i>
+            <svg id='ico'  xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-pause-circle" viewBox="0 0 16 16">
+                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                <path d="M5 6.25a1.25 1.25 0 1 1 2.5 0v3.5a1.25 1.25 0 1 1-2.5 0v-3.5zm3.5 0a1.25 1.25 0 1 1 2.5 0v3.5a1.25 1.25 0 1 1-2.5 0v-3.5z"/>
+            </svg>
+            `;
+            mediaVideo.play();
+            audio.play();
+        } else {
+            playButton.innerHTML=`
+            <i class="bi bi-play-circle"></i>
+            <svg id='ico'  xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-play-circle" viewBox="0 0 16 16">
+                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                <path d="M6.271 5.055a.5.5 0 0 1 .52.038l3.5 2.5a.5.5 0 0 1 0 .814l-3.5 2.5A.5.5 0 0 1 6 10.5v-5a.5.5 0 0 1 .271-.445z"/>
+            </svg>
+            `;
+            mediaVideo.pause();
+            audio.pause();
+        }
+    });
+    muteButton.addEventListener("click", () => {
+        if (mediaVideo.muted, audio.muted) {
+            muteButton.innerHTML=`
+            <i class="bi bi-volume-mute-fill"></i>
+            <svg id='ico'  xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-volume-mute-fill" viewBox="0 0 16 16">
+                <path d="M6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06zm7.137 2.096a.5.5 0 0 1 0 .708L12.207 8l1.647 1.646a.5.5 0 0 1-.708.708L11.5 8.707l-1.646 1.647a.5.5 0 0 1-.708-.708L10.793 8 9.146 6.354a.5.5 0 1 1 .708-.708L11.5 7.293l1.646-1.647a.5.5 0 0 1 .708 0z"/>
+            </svg>
+            `;
+            mediaVideo.muted = false;
+            audio.muted = false;
+        } else {
+            muteButton.innerHTML=`
+            <i class="bi bi-volume-up-fill"></i>
+            <svg id='ico' xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-volume-up-fill" viewBox="0 0 16 16">
+                <path d="M11.536 14.01A8.473 8.473 0 0 0 14.026 8a8.473 8.473 0 0 0-2.49-6.01l-.708.707A7.476 7.476 0 0 1 13.025 8c0 2.071-.84 3.946-2.197 5.303l.708.707z"/>
+                <path d="M10.121 12.596A6.48 6.48 0 0 0 12.025 8a6.48 6.48 0 0 0-1.904-4.596l-.707.707A5.483 5.483 0 0 1 11.025 8a5.483 5.483 0 0 1-1.61 3.89l.706.706z"/>
+                <path d="M8.707 11.182A4.486 4.486 0 0 0 10.025 8a4.486 4.486 0 0 0-1.318-3.182L8 5.525A3.489 3.489 0 0 1 9.025 8 3.49 3.49 0 0 1 8 10.475l.707.707zM6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06z"/>
+            </svg>
+            `;
+            mediaVideo.muted = true;
+            audio.muted = true;
+        }
+    });
+}
+function downloadcode() {
+    const filename = prompt("Enter file name without extension.", "Untitled");
+    const extension = prompt("Enter Extension name", "txt");
+    const code = document.getElementById("IDE").value;
+    const blob = new Blob([code], { type: "text/html" });
+    const url = URL.createObjectURL(blob);
+    const tag = document.createElement("a");
+    tag.download = filename + "." + extension;
+    tag.href = url;
+    tag.click();
+    tag.remove();
+}
+function info(){
+    document.getElementById("main").innerHTML = `
+    <b>Introduction & commands</b>
+    <br>
+    <div style='width:fit-content; height:fit-content; overflow:auto; font-size:14px;'>
+        Absolutely, there's a myriad of incredible features that cater to both developers and users,
+        enhancing their experiences in various ways. One standout capability is the Image Identifier 
+        powered by ml5. This remarkable tool possesses the ability to accurately recognize and 
+        classify images based on the input you provide. Its real marvel lies in the way it quantifies 
+        the likelihood of correct identification, giving you a clear understanding of its confidence 
+        level.
+        Additionally, there's an array of multimedia functionalities that add an extra layer of 
+        versatility to the platform. The Image Viewer opens up a seamless visual experience, while 
+        the Media Player allows users to effortlessly enjoy their favorite audio and video content. 
+        For those who want to harness the power of their device's hardware, features like the Camera 
+        and Sound Recorder provide accessible tools to capture and manipulate multimedia content.
+        But the innovation doesn't stop there. Developers are treated to a host of dynamic features 
+        that empower their creative process. An integrated IDE (Integrated Development Environment) 
+        serves as a comprehensive hub for coding and project management. It provides a streamlined 
+        environment for coding, testing, and debugging, ensuring a smoother development journey. 
+        Additionally, a user-friendly Terminal serves as an invaluable asset for beginners, enabling 
+        them to interact with the system, execute commands, and gain hands-on experience in a 
+        controlled environment.
+        With these captivating features, the platform not only caters to the diverse needs of 
+        developers but also enriches the overall user experience, making it a powerhouse of innovation 
+        and utility.
+    </div>
+    <br>
+    <h6>Commands:</h6>
+    <br>
+    <code>Ctrl</code>+<code>1</code> = Recent
+    <br>
+    <code>Ctrl</code>+<code>b</code> = Back
+    <br>
+    <code>Ctrl</code>+<code>i</code> = Info
+    <br>
+    <code>Ctrl</code>+<code>g</code> = Browser
+    <br>
+    <code>Ctrl</code>+<code>t</code> = Terminal
+    <br>
+    <code>Ctrl</code>+<code>h</code> = Home
+    <br>
+    <code>Ctrl</code>+<code>m</code> = Media Player
+    <br>
+    <code>Ctrl</code>+<code>2</code> = Camera
+    <br>
+    <code>Ctrl</code>+<code>3</code> = Image viewer
+    <br>
+    <code>Ctrl</code>+<code>p</code> = Battery details
+    <br>
+    <code>Ctrl</code>+<code>win</code> = Menu
+    <br>
+    <code>Ctrl</code>+<code>8</code> = Settings
+    <br>
+    <code>Ctrl</code>+<code>.</code> = NovaStream IDE
+    <br>
+    <code>Ctrl</code>+<code>]</code> = Sound Recorder
+    <br>
+    <code>Ctrl</code>+<code>5</code> = Image Identifier
+    `;
+    document.getElementById("app").setAttribute("style", "top:10%; left:10%;");
+    document.getElementById("top-head").innerHTML = "Info";
+}
+function NovaStreamIDE() {
+    document.getElementById("main").innerHTML = `It will Download your code from this IDE to your device<textarea id='IDE'></textarea><button onclick='downloadcode()'style='position:absolute; left:10px; bottom: 55px;'>Download Code</button>`;
+    document.getElementById("app").setAttribute("style", "top:10%; left:10%;");
+    document.getElementById("top-head").innerHTML = "NovaStream IDE";
+}
+function terminal() {
+    console.log("[Info]: Opening terminal in Nexus OS");
+    document.getElementById("main").innerHTML = `<iframe src='https://yash12007.github.io/Terminal'width='75%'height='65%'>`;
+    document.getElementById("app").setAttribute("style", "top:10%; left:10%;");
+    document.getElementById("top-head").innerHTML = "Terminal";
+}
+function closeapp() {
+    document.getElementById("app").setAttribute("style", "top:-50000px; left:-50000px; opacity:0;");
+}
+function Browser() {
+    document.getElementById("new-app").setAttribute("style", "top:10%; left:10%;");
+}
+function closebrowser() {
+    document.getElementById("new-app").setAttribute("style", "top:-50000px; left:-50000px;");
+}
+function home() {
+    closeapp();
+    closebrowser();
+    closesettings();
+}
+function calculate() {
+    const start = performance.now();
+    const iterations = 100000000;
+    const end = performance.now();
+    const elapsed = end - start;
+    const percentage = (elapsed / 1000) * 100;
+    return percentage;
+}
+function updatecpulaod() {
+    const cpuload = document.getElementById("cpu-load");
+    const percentage = calculate().toFixed(2);
+    cpuload.innerHTML = "CPU: " + percentage + "%";
+    setTimeout(updatecpulaod, 1000);
+}
+function checkmemory() {
+    const memory = window.performance && window.performance.memory;
+    if (memory) {
+        const memoryUsed = memory.usedJSHeapSize / 1024 / 1024;
+        document.getElementById("memory-remaining").innerHTML = "Memory: " + memoryUsed.toFixed(2) + "MB";
+    } else {
+        document.getElementById("memory-remaining").innerHTML = "Memory: Error occured!";
+    }
+    setTimeout(checkmemory, 1000);
+}
+function checkstorage() {
+    if (navigator.storage && navigator.storage.estimate) {
+        navigator.storage.estimate().then((estimate) => {
+            const quotaInGB = estimate.quota / 1024 / 1024 / 1024;
+            const usageInGB = estimate.usage / 1024 / 1024 / 1024;
+            const availableInGB = quotaInGB - usageInGB;
+            document.getElementById("Storage").innerHTML = "Storage: " + availableInGB.toFixed(2) + "GB";
+        });
+    } else {
+        document.getElementById("Storage").innerHTML = "Storage: Error";
+    }
+    setTimeout(checkstorage, 1000);
+}
+function ip(){
+    fetch('https://api64.ipify.org?format=json')
+    .then(response => response.json())
+    .then(data => {
+        document.getElementById("ip").innerHTML = "IP: "+data.ip;
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+}
+ip();
+function checkbattery() {
+    if (navigator.getBattery) {
+        navigator.getBattery().then((battery) => {
+            const batterypercentage = battery.level * 100;
+            document.getElementById("percentage").innerHTML = batterypercentage.toFixed(2) + "%";
+        });
+    } else {
+        document.getElementById("percentage").innerHTML = "Battery: Error";
+    }
+    setTimeout(checkbattery, 1000);
+}
+function camera() {
+    document.getElementById("main").innerHTML = `<video id='cam'width='50%'height='50%'autoplay></video>
+    <br>
+    <div style='display:flex;'>
+        <button onclick='captureImage()'>
+            <i class='bi bi-record-circle'></i>
+            <svg xmlns='http://www.w3.org/2000/svg'width='30'height='30'fill='currentColor'class='bi bi-record-circle'viewBox='0 0 16 16'>
+                <path d='M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z'/><path d='M11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0z'/>
+            </svg>
+            Capture Image
+        </button>
+        <a id='capdown'download='Capture.jpeg'>
+            <img width='30px'height='30px'id='capimg'>
+            Image preview (click to download)
+        </a>
+    </div>`;
+    document.getElementById("app").setAttribute("style", "top:10%; left:10%; opacity:1;");
+    document.getElementById("top-head").innerHTML = "Camera";
+    if (navigator.mediaDevices) {
+        navigator.mediaDevices
+            .getUserMedia({ video: true })
+            .then((stream) => {
+                document.getElementById("cam").srcObject = stream;
+            })
+            .catch((error) => {
+                document.getElementById("main").innerHTML = "Camera not supported!";
+                console.error("Camera Error:", error);
+            });
+    } else {
+        document.getElementById("main").innerHTML = "Camera not supported!";
+    }
+}
+function captureImage() {
+    const videoElement = document.getElementById("cam");
+    const canvas = document.createElement("canvas");
+    const ctx = canvas.getContext("2d");
+    canvas.width = videoElement.videoWidth;
+    canvas.height = videoElement.videoHeight;
+    ctx.drawImage(videoElement, 0, 0, canvas.width, canvas.height);
+    const imageDataUrl = canvas.toDataURL("image/jpeg");
+    document.getElementById("capimg").src = imageDataUrl;
+    document.getElementById("capdown").href = imageDataUrl;
+}
+let mediaRecorder;
+let recordedChunks = [];
+function soundRecorder() {
+    document.getElementById("main").innerHTML = `<button onclick='startRecording()'>Start Recording</button><button onclick='stopRecording()'>Stop Recording</button>`;
+    document.getElementById("app").setAttribute("style", "top:10%; left:10%;");
+    document.getElementById("top-head").innerHTML = "Sound Recorder";
+}
+document.addEventListener('keydown', function(event) {
+    const key = event.key;
+    if (event.ctrlKey && key === '1') {
+        event.preventDefault();
+        recent();
+    }
+    if (event.ctrlKey && key === 'b') {
+        event.preventDefault();
+        backscreen();
+    }
+    if (event.ctrlKey && key === 'i') {
+        event.preventDefault();
+        info();
+    }
+    if (event.ctrlKey && key === 'g') {
+        event.preventDefault();
+        Browser();
+    }
+    if (event.ctrlKey && key === 't') {
+        event.preventDefault();
+        terminal();
+    }
+    if (event.ctrlKey && key === 'h') {
+        event.preventDefault();
+        home();
+    }
+    if (event.ctrlKey && key === 'm') {
+        event.preventDefault();
+        media();
+    }
+    if (event.ctrlKey && key === '2') {
+        event.preventDefault();
+        camera();
+    }
+    if (event.ctrlKey && key === '3') {
+        event.preventDefault();
+        imgview();
+    }
+    if (event.ctrlKey && key === 'p') {
+        event.preventDefault();
+        batterydetails();
+    }
+    if (event.ctrlKey && key === 'Meta') {
+        event.preventDefault();
+        openapp();
+    }
+    if (event.ctrlKey && key === '8') {
+        event.preventDefault();
+        settings();
+    }
+    if (event.ctrlKey && key === '.') {
+        event.preventDefault();
+        NovaStreamIDE();
+    }
+    if (event.ctrlKey && key === ']') {
+        event.preventDefault();
+        soundRecorder();
+    }
+    if (event.ctrlKey && key === '5') {
+        event.preventDefault();
+        ImageIdentifier();
+    }
+});
+function batterydetails(){
+    if ('getBattery' in navigator) {
+        navigator.getBattery().then(function(battery) {
+        document.getElementById("main").innerHTML = `
+        Battery Level: ${(battery.level * 100)}%
+        <br>
+        Charging: ${(battery.charging ? 'Yes' : 'No')}
+        <br>
+        Time Remaining: ${(battery.dischargingTime / 60)} minutes
+        <br>
+        Time Since Last Charge: ${(battery.chargingTime / 3600)} hours
+        `;
+        document.getElementById("app").setAttribute("style", "top:10%; left:10%;");
+        document.getElementById("top-head").innerHTML = "Battery details";
+    });
+    } else {
+        console.log('Battery Status API is not supported in this browser.');
+    }
+}
+const draggables = document.querySelectorAll('#app');
+let activeDraggable = null;
+
+draggables.forEach(draggable => {
+  draggable.addEventListener('mousedown', startDrag);
+});
+
+function startDrag(e) {
+  activeDraggable = e.target;
+  const offsetX = e.clientX - activeDraggable.getBoundingClientRect().left;
+  const offsetY = e.clientY - activeDraggable.getBoundingClientRect().top;
+
+  document.addEventListener('mousemove', onDrag);
+  document.addEventListener('mouseup', stopDrag);
+
+  function onDrag(e) {
+    const x = e.clientX - offsetX;
+    const y = e.clientY - offsetY;
+    activeDraggable.style.left = x + 'px';
+    activeDraggable.style.top = y + 'px';
+  }
+
+  function stopDrag() {
+    document.removeEventListener('mousemove', onDrag);
+    document.removeEventListener('mouseup', stopDrag);
+    activeDraggable = null;
+  }
+}
+function changewallpaper() {
+    document.getElementById("main").innerHTML = `<input type='file'accept='image/png, image/jpeg, image/jpg, image/svg+xml'onchange='handleFileChange(event)'><img height='50%'id='wallpaper'><button onclick='changeImage()'>Change</button><button onclick='setDefaultWallpaper()'>Default wallpaper</button>`;
+    document.getElementById("app").setAttribute("style", "top:10%; left:10%;");
+    document.getElementById("top-head").innerHTML = "Wallpaper";
+}
+function handleFileChange(event) {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+    reader.onload = function () {
+        const dataURL = reader.result;
+        document.getElementById("wallpaper").src = dataURL;
+    };
+    if (file) {
+        reader.readAsDataURL(file);
+    }
+}
+function changeImage() {
+    const wallpaperImage = document.getElementById("wallpaper").src;
+    localStorage.setItem("wallpaper", `url(${wallpaperImage})`);
+    document.body.style.backgroundImage = `url(${wallpaperImage})`;
+}
+function setDefaultWallpaper() {
+    localStorage.setItem("wallpaper", "linear-gradient(to right, white, blue)");
+    document.body.style.backgroundImage = "linear-gradient(to right, white, blue)";
+}
+function wallpaper() {
+    const wall = localStorage.getItem("wallpaper");
+    document.body.style.backgroundImage = wall;
+}
+wallpaper();
+function startRecording() {
+    const constraints = { audio: true };
+    recordedChunks = [];
+    navigator.mediaDevices
+        .getUserMedia(constraints)
+        .then((stream) => {
+            mediaRecorder = new MediaRecorder(stream);
+            mediaRecorder.ondataavailable = (event) => {
+                if (event.data.size > 0) {
+                    recordedChunks.push(event.data);
+                }
+            };
+            mediaRecorder.onstop = () => {
+                const blob = new Blob(recordedChunks, { type: "audio/wav" });
+                const url = URL.createObjectURL(blob);
+                const audio = new Audio(url);
+                audio.controls = true;
+                document.getElementById("main").appendChild(audio);
+            };
+            mediaRecorder.start();
+        })
+        .catch((error) => {
+            console.error("Sound Recorder Error:", error);
+        });
+}
+function stopRecording() {
+    if (mediaRecorder && mediaRecorder.state !== "inactive") {
+        mediaRecorder.stop();
+    }
+}
+function showPermissionDialog() {
+    const dialog = document.getElementById("permissionDialog");
+    dialog.setAttribute("style", "top:50px; left:0px");
+}
+function closePermissionDialog() {
+    const dialog = document.getElementById("permissionDialog");
+    dialog.setAttribute("style", "top:-50000px, left:-50000px");
+}
+function requestCameraPermission() {
+    navigator.mediaDevices
+        .getUserMedia({ video: true })
+        .then((stream) => {
+            console.log("Camera permission granted.");
+            stream.getTracks().forEach((track) => track.stop());
+        })
+        .catch((error) => {
+            console.error("Error accessing camera:", error);
+        });
+}
+function requestMicrophonePermission() {
+    navigator.mediaDevices
+        .getUserMedia({ audio: true })
+        .then((stream) => {
+            console.log("Microphone permission granted.");
+            stream.getTracks().forEach((track) => track.stop());
+        })
+        .catch((error) => {
+            console.error("Error accessing microphone:", error);
+        });
+}
+window.addEventListener("load", () => {
+    checkmemory();
+    updatecpulaod();
+    checkstorage();
+    checkbattery();
+});
+</script>
+</html>
