@@ -1,6 +1,9 @@
 # Nexus OS
 An open-source project named Nexus OS: An operating system for everyone. Including developers, users, beginners in coding, etc. It is created by Android webview & pywebview (only for Windows & Android)
 <br>
+This file is deployed on <a href='https://yash12007.github.io/Nexus/'>https://yash12007.github.io/Nexus/</a>
+<br>
+<br>
 LICENSE: GNU (General Public License) v3.0
 <br>
 <b>Preview of Nexus OS</b>
