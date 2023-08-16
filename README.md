@@ -6,6 +6,10 @@ This file is deployed on <a href='https://yash12007.github.io/Nexus/'>https://ya
 <br>
 LICENSE: GNU (General Public License) v3.0
 <br>
+<b>Icon</b>
+<br>
+<img src='https://github.com/Yash12007/Nexus/raw/main/Nexus%20OS.ico'>
+<br>
 <b>Preview of Nexus OS</b>
 <br>
 <img src='https://github.com/Yash12007/Nexus/blob/main/Screenshot%202023-08-16%20132525.png?raw=true'>
