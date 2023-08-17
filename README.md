@@ -16,7 +16,7 @@ LICENSE: GNU (General Public License) v3.0
 <br>
 <b>Preview of Nexus OS</b>
 <br>
-<img src='https://github.com/Yash12007/Nexus/blob/main/Screenshot%202023-08-16%20132525.png?raw=true'>
+<img src='https://github.com/Yash12007/Nexus/blob/main/Untitled%20design.png?raw=true'>
 <br>
 Custom Modification-Only License
 
