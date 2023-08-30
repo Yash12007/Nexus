@@ -1,4 +1,8 @@
 # Nexus OS
+
+![License](https://img.shields.io/badge/license-GNU%20GPL%20v3.0-blue)
+![Created](https://img.shields.io/badge/created-August%2016%2C%202023-brightgreen)
+
 An open-source project named Nexus OS: An operating system for everyone. Including developers, users, beginners in coding, etc. It is created by Android webview & pywebview (only for Windows & Android)
 <br>
 This file is deployed on <a href='https://yash12007.github.io/Nexus/'>https://yash12007.github.io/Nexus/</a>
