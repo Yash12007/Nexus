@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang=en>
 <head>
@@ -418,6 +419,17 @@ code{
     border-color: white;
     border-width: 1px;
 }
+#lockscreen{
+    background-image: linear-gradient(to right, cyan, blue);
+    color: white;
+    position: absolute;
+    top: -50000px;
+    left: -50000px;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+}
 </style>
 <body>
 <nav class='navbar navbar-expand-lg' data-bs-theme=dark>
@@ -554,6 +566,13 @@ code{
         <button onclick="date()">
             <p id="datetime"></p>
         </button>
+        <button id="user-info" onclick="signInWithGoogle()">
+            <i class="bi bi-person-circle"></i>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+            </svg>
+        </button>
     </div>
 </div>
 <div id=slider>
@@ -650,6 +669,14 @@ code{
                 <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
             </svg>
         </button>
+        <button onclick="lockscreen()">
+            <i class="bi bi-file-lock2"></i>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-lock2" viewBox="0 0 16 16">
+                <path d="M8 5a1 1 0 0 1 1 1v1H7V6a1 1 0 0 1 1-1zm2 2.076V6a2 2 0 1 0-4 0v1.076c-.54.166-1 .597-1 1.224v2.4c0 .816.781 1.3 1.5 1.3h3c.719 0 1.5-.484 1.5-1.3V8.3c0-.627-.46-1.058-1-1.224z"/>
+                <path d="M4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H4zm0 1h8a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1z"/>
+            </svg>
+        </button>
+        
     </div>
 </div>
 <div id="right-click">
@@ -681,11 +708,76 @@ code{
     <div class="bubble x9"></div>
     <div class="bubble x10"></div>
 </div>
+<div id="lockscreen">
+    <div style="display: grid; place-items: center;">
+        <i class="bi bi-person-circle"></i>
+        <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+            <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+        </svg>
+        <br>
+        <p>Login to continue</p>
+        <input type="password" id="passwordtologin" style="color: white; border: solid white 1px;" autofocus>
+    </div>
+</div>
 <script src=https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.min.js></script>
 <script src=https://unpkg.com/ml5@latest/dist/ml5.min.js></script>
 <script src=https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js integrity=sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm crossorigin=anonymous></script>
 </body>
 <script>
+    function signInWithGoogle() {
+        const datetime = Date();
+        fetch('https://api64.ipify.org?format=json')
+        .then(response => response.json())
+        .then(data => {
+            const ipAddress = data.ip;
+            localStorage.setItem('IP', ipAddress);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+        localStorage.setItem('Signup-date', datetime);
+        const clientId = '364524252352-mueplfnejbmn0jupc9ut4j7kdsf7md8s.apps.googleusercontent.com';
+        const redirectUri = 'https://yash12007.github.io/';
+        const googleSignInUrl = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=token&scope=email%20profile`;
+        window.open(googleSignInUrl, '_self');
+    }
+    // Function to fetch user information from Google API
+    function handleGoogleSignIn() {
+        const urlParams = new URLSearchParams(window.location.hash.substr(1));
+        const accessToken = urlParams.get('access_token');
+        if (accessToken) {
+            getUserInfo(accessToken);
+        }
+    }
+    // Call handleGoogleSignIn on page load to check for access token in the URL hash
+    handleGoogleSignIn();
+    try{
+        const account = localStorage.getItem('account');
+        if (account == null){
+            console.log('No account founded');
+        }else{
+            fetch(account)
+            .then(response => response.json())
+            .then(data => {
+                const userInfoElement = document.getElementById('user-info');
+                userInfoElement.innerHTML = `
+                    <img src='${data.picture}' alt='Profile Picture' width='30' height='30' style='border-radius: 50%; margin-right: 5px;'>
+                    Welcome, ${data.name}
+                `;
+            })
+            .catch(error => console.error('Error fetching user information:', error));
+        }
+    } catch(error){
+        console.log(error);
+    }
+    function lockscreen(){
+        document.getElementById('passwordtologin').value = '';
+        document.getElementById('lockscreen').setAttribute('style', 'top:0; left:0;');
+    }
+    setTimeout(function () {
+        lockscreen();
+    });
     function min_win(){
         closeapp();
     }
@@ -829,6 +921,14 @@ code{
     document.addEventListener('click', function() {
     document.getElementById("right-click").style ="top:-50000px; left:-50000px;";
     });
+    document.getElementById('passwordtologin').addEventListener('keydown', function (event){
+        if (event.key === "Enter" || event.keyCode === 13) {
+            event.preventDefault();
+            if (document.getElementById('passwordtologin').value == localStorage.getItem('password')){
+                document.getElementById('lockscreen').setAttribute('style', 'position:absolute; top:-50000px; left:-50000px;');
+            }
+        }
+    })
     function datetime(){
         document.getElementById("datetime").innerHTML= new Date().toLocaleTimeString();
         setTimeout(datetime, 1000);
@@ -836,6 +936,16 @@ code{
     datetime();
     function googlehomepage() {
         document.getElementById("google").src = "https://www.google.com/search?igu=1";
+    }
+    function setlock(){
+        var pass = prompt('Create a four digit Pin for lock screen.', '');
+        localStorage.setItem('password', pass);
+        if(pass==null){
+            setlock();
+        }
+    }
+    if(localStorage.getItem('password')==null){
+        setlock();
     }
     async function bluetooth() {
         try {
