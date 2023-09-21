@@ -691,7 +691,7 @@ code{
 <div id="right-click">
     <button onclick="refreshPage()">Refresh</button>
     <br>
-    <button onclick="wallpaper()">Wallpaper</button>
+    <button onclick="changewallpaper()">Wallpaper</button>
     <br>
     <button onclick="terminal()">Open terminal</button>
     <br>
@@ -736,6 +736,21 @@ code{
 <script src=https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js integrity=sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm crossorigin=anonymous></script>
 </body>
 <script>
+    function rotateToLandscape() {
+        if (screen.orientation) {
+            screen.orientation.lock("landscape");
+            console.log('screen rotate to Landscape...');
+        } else if (screen.mozLockOrientation) {
+            screen.mozLockOrientation("landscape");
+            console.log('screen rotate to Landscape...');
+        } else if (screen.msLockOrientation) {
+            screen.msLockOrientation("landscape");
+            console.log('screen rotate to Landscape...');
+        } else {
+            console.error('Error in rotating screen...');
+        }
+    }
+    rotateToLandscape();
     function signInWithGoogle() {
         const datetime = Date();
         fetch('https://api64.ipify.org?format=json')
