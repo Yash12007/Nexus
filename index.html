@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang=en>
 <head>
@@ -430,6 +429,16 @@ code{
     display: grid;
     place-items: center;
 }
+@keyframes lockopener {
+    0%{
+        top:0;
+        left: 0;
+    }
+    100%{
+        top: -50000px;
+        left: 0;
+    }
+}
 </style>
 <body>
 <nav class='navbar navbar-expand-lg' data-bs-theme=dark>
@@ -718,6 +727,8 @@ code{
         <br>
         <p>Login to continue</p>
         <input type="password" id="passwordtologin" style="color: white; border: solid white 1px;" autofocus>
+        <br>
+        <b id="passstatus" style="color: white; opacity: 0;">Error: wrong password</b>
     </div>
 </div>
 <script src=https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.min.js></script>
@@ -925,7 +936,11 @@ code{
         if (event.key === "Enter" || event.keyCode === 13) {
             event.preventDefault();
             if (document.getElementById('passwordtologin').value == localStorage.getItem('password')){
-                document.getElementById('lockscreen').setAttribute('style', 'position:absolute; top:-50000px; left:-50000px;');
+                var lock = document.getElementById('lockscreen');
+                lock.setAttribute('style', 'position:absolute; animation:10s lockopener;');
+                document.getElementById('passstatus').setAttribute('style', 'opacity:0;');
+            } else{
+                document.getElementById('passstatus').setAttribute('style', 'opacity:1;');
             }
         }
     })
@@ -938,7 +953,7 @@ code{
         document.getElementById("google").src = "https://www.google.com/search?igu=1";
     }
     function setlock(){
-        var pass = prompt('Create a four digit Pin for lock screen.', '');
+        var pass = prompt('Create a password for lock screen.', '');
         localStorage.setItem('password', pass);
         if(pass==null){
             setlock();
