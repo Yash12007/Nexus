@@ -1,0 +1,716 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Nexus OS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  </head>
+  <style>
+    body{
+      width: 100%;
+      overflow: hidden;
+    }
+    @keyframes lockopener {
+      0%{
+        top: 0;
+      }
+      100%{
+        top: -50000px;
+      }
+    }
+    #bottom{
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 35px;
+      width: 100%;
+      display: grid;
+      place-items: center;
+    }
+    #main{
+      background: none;
+      position: absolute;
+      top: 21.5px;
+      left: 0;
+      width: 100%;
+      bottom: 35px;
+      display: grid;
+      place-items: center;
+      background-image: linear-gradient(to right, cyan, blue);
+      color: white;
+    }
+    #welcome-text {
+      overflow: hidden;
+      white-space: nowrap;
+      animation: typing 1s steps(30, end) forwards;
+    }
+    @keyframes typing {
+      0% {
+        width: 0;
+      }
+      100% {
+        width: 100%;
+      }
+    }
+    #app{
+      position: absolute;
+      top: -50000px;
+      left: -50000px;
+      width: 100%;
+    }
+    #lock{
+      background-image: linear-gradient(to right, cyan, blue);
+      color: white;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      display: grid;
+      place-items: center;
+      top: -50000px;
+      left: -50000px;
+    }
+    #powerscreen{
+      position: absolute;
+      top: -50000px;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      display: grid;
+      place-items: center;
+      background: black;
+      color: white;
+    }
+  </style>
+  <body>
+    <div style="display: flex; position: absolute; top: 0; left: 0; width: 100%; height: 18px;" onclick="status()">
+      <p style="position: absolute; left: 0;">
+        <i class="bi bi-reception-4"></i>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-reception-4" viewBox="0 0 16 16">
+          <path d="M0 11.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-2zm4-3a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-5zm4-3a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-8zm4-3a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v11a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-11z"/>
+        </svg>
+      </p>
+      <p style="position: absolute; left: 45%;" class="time">00:00</p>
+      <p style="position: absolute; right: 0;">
+        <i class="bi bi-battery-full"></i>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-battery-full" viewBox="0 0 16 16">
+          <path d="M2 6h10v4H2V6z"/>
+          <path d="M2 4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H2zm10 1a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h10zm4 3a1.5 1.5 0 0 1-1.5 1.5v-3A1.5 1.5 0 0 1 16 8z"/>
+        </svg>
+      </p>
+    </div>
+    <div id="main">
+      <div style="display: grid; place-items: center;">
+        <p style="font-size: 72px;" class="time">00:00</p>
+        <p class="date">Fri, 1 Jan 2023</p>
+      </div>
+      <div style="display: grid; place-items: center;">
+        <h5 id="welcome-text">Nexus OS</h5>
+        <p>powered by Yash12007</p>
+      </div>
+    </div>
+    <div class="card" style="width: 18rem;" id="app">
+      <div class="card-body">
+        <div style="display: flex;">
+          <b class="card-title" id="appname">App</b>
+          <div style="position: absolute; right: 0; top: 10px;">
+            <button class="btn" onclick="minimize()">
+              _
+            </button>
+            <button class="btn" onclick="maximize()">
+              <i class="bi bi-square"></i>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-square" viewBox="0 0 16 16">
+                <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+              </svg>
+            </button>
+            <button class="btn" onclick="closeapp()">
+              <i class="bi bi-x-lg"></i>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div id="content">
+          <i class="bi bi-layers"></i>
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-layers" viewBox="0 0 16 16">
+            <path d="M8.235 1.559a.5.5 0 0 0-.47 0l-7.5 4a.5.5 0 0 0 0 .882L3.188 8 .264 9.559a.5.5 0 0 0 0 .882l7.5 4a.5.5 0 0 0 .47 0l7.5-4a.5.5 0 0 0 0-.882L12.813 8l2.922-1.559a.5.5 0 0 0 0-.882l-7.5-4zm3.515 7.008L14.438 10 8 13.433 1.562 10 4.25 8.567l3.515 1.874a.5.5 0 0 0 .47 0l3.515-1.874zM8 9.433 1.562 6 8 2.567 14.438 6 8 9.433z"/>
+          </svg>
+          No recents
+        </div>
+      </div>
+    </div>
+    <div id="bottom" style="display: grid; place-items: center;">
+      <div style="display: flex;">
+        <a class="btn" onclick="Applications()">
+          <i class="bi bi-box"></i>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box" viewBox="0 0 16 16">
+            <path d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5 8 5.961 14.154 3.5 8.186 1.113zM15 4.239l-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923l6.5 2.6zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464L7.443.184z"/>
+          </svg>
+        </a>
+        <a class="btn" onclick="google()">
+          <i class="bi bi-search"></i>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+          </svg>
+        </a>
+        <a class="btn" onclick="terminal()">
+          <i class="bi bi-terminal"></i>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-terminal" viewBox="0 0 16 16">
+            <path d="M6 9a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3A.5.5 0 0 1 6 9zM3.854 4.146a.5.5 0 1 0-.708.708L4.793 6.5 3.146 8.146a.5.5 0 1 0 .708.708l2-2a.5.5 0 0 0 0-.708l-2-2z"/>
+            <path d="M2 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2H2zm12 1a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1h12z"/>
+          </svg>
+        </a>
+        <a class="btn" id="user-info" onclick="account()">
+          <i class="bi bi-person-circle"></i>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+            <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+          </svg>
+        </a>
+        <a class="btn" onclick="Nexus_translate()">
+          <i class="bi bi-translate"></i>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-translate" viewBox="0 0 16 16">
+            <path d="M4.545 6.714 4.11 8H3l1.862-5h1.284L8 8H6.833l-.435-1.286H4.545zm1.634-.736L5.5 3.956h-.049l-.679 2.022H6.18z"/>
+            <path d="M0 2a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v3h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-3H2a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H2zm7.138 9.995c.193.301.402.583.63.846-.748.575-1.673 1.001-2.768 1.292.178.217.451.635.555.867 1.125-.359 2.08-.844 2.886-1.494.777.665 1.739 1.165 2.93 1.472.133-.254.414-.673.629-.89-1.125-.253-2.057-.694-2.82-1.284.681-.747 1.222-1.651 1.621-2.757H14V8h-3v1.047h.765c-.318.844-.74 1.546-1.272 2.13a6.066 6.066 0 0 1-.415-.492 1.988 1.988 0 0 1-.94.31z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+    <div style="position: absolute; bottom: 60px; right: 10px;">
+      <button class="btn" onclick="recent()">
+        <i class="bi bi-list"></i>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+        </svg>
+      </button>
+      <button class="btn" onclick="home()">
+        <i class="bi bi-house"></i>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+          <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5ZM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5 5 5Z"/>
+        </svg>
+      </button>
+      <button class="btn" onclick="back()">
+        <i class="bi bi-arrow-return-left"></i>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-return-left" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z"/>
+        </svg>
+      </button>
+      <button class="btn" onclick="lock()" id="locker">
+        <i class="bi bi-file-lock2"></i>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-lock2" viewBox="0 0 16 16">
+          <path d="M8 5a1 1 0 0 1 1 1v1H7V6a1 1 0 0 1 1-1zm2 2.076V6a2 2 0 1 0-4 0v1.076c-.54.166-1 .597-1 1.224v2.4c0 .816.781 1.3 1.5 1.3h3c.719 0 1.5-.484 1.5-1.3V8.3c0-.627-.46-1.058-1-1.224z"/>
+          <path d="M4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H4zm0 1h8a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1z"/>
+        </svg>
+      </button>
+      <button class="btn" onclick="info()">
+        <i class="bi bi-info-circle"></i>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16">
+          <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+          <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+        </svg>
+      </button>
+      <button class="btn"  class="btn" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+        <i class="bi bi-gear"></i>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gear" viewBox="0 0 16 16">
+          <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z"/>
+          <path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115l.094-.319z"/>
+        </svg>
+      </button>
+    </div>
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasExampleLabel">Settings</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <div>
+          You can change settings from here.
+        </div>
+        <div class="dropdown mt-3">
+          <b>Theme</b>
+          <br>
+          <button id="theme" class="btn" onclick="changetheme()">
+            <i class="bi bi-moon-stars"></i>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-moon-stars" viewBox="0 0 16 16">
+              <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278zM4.858 1.311A7.269 7.269 0 0 0 1.025 7.71c0 4.02 3.279 7.276 7.319 7.276a7.316 7.316 0 0 0 5.205-2.162c-.337.042-.68.063-1.029.063-4.61 0-8.343-3.714-8.343-8.29 0-1.167.242-2.278.681-3.286z"/>
+              <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+            </svg>
+            Dark
+          </button>
+        </div>
+        <div class="dropdown mt-3">
+          <b>Wallpaper</b>
+          <br>
+          <input type="file" id="bgimg">
+        </div>
+      </div>
+      </div>
+    </div>
+    <div id="lock">
+      <div style="display: grid; place-items: center;">
+        <i class="bi bi-person-circle"></i>
+        <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+          <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+          <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+        </svg>
+        <br>
+        <div>
+          <input id="password" type="password" placeholder="Enter your password" style="background: none; color: white; border-radius: 30px; border: 1px solid white;">
+          <p id="passstatus"></p>
+        </div>
+      </div>
+    </div>
+    <div id="powerscreen">
+      <i class="bi bi-box"></i>
+      <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" fill="currentColor" class="bi bi-box" viewBox="0 0 16 16">
+        <path d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5 8 5.961 14.154 3.5 8.186 1.113zM15 4.239l-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923l6.5 2.6zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464L7.443.184z"/>
+      </svg>
+      <div style="display: grid; place-items: center;">
+        <h5 id="welcome-text">Nexus OS</h5>
+        <p>powered by Yash12007</p>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  </body>
+  <script>
+    function poweroff(){
+      document.getElementById('powerscreen').setAttribute('style', 'top:0; left:0;');
+      setTimeout(close(), 5000);
+    }
+    function reboot(){
+      document.getElementById('powerscreen').setAttribute('style', 'top:0; left:0;');
+      setTimeout(window.location.reload(), 5000);
+    }
+    async function bluetooth() {
+        try {
+            const device = await navigator.bluetooth.requestDevice({ acceptAllDevices: true, optionalServices: ["battery_service"] });
+            const outputDiv = document.getElementById("main");
+            outputDiv.innerHTML = `<p>Device Name:${device.name}</p><p>Device ID:${device.id}</p><p>Connected:${device.gatt.connected}</p><p>Supported Services:${device.uuids.join(", ")}</p>`;
+        } catch (error) {
+            console.error("Error accessing Bluetooth:", error);
+        }
+    }
+    document.getElementById('bgimg').addEventListener('change', (event) => {
+      const fileInput = event.target;
+      if (fileInput.files.length > 0) {
+        const file = fileInput.files[0];
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          const dataURL = e.target.result;
+          document.getElementById('main').setAttribute('style', `background-image: url('${dataURL}')`);
+        };
+        reader.readAsDataURL(file);
+      }
+    });
+    function checklock(){
+      if (localStorage.getItem('password')==''){
+        console.log('password not set');
+      }
+      if (localStorage.getItem('password') == null){
+        var pin = prompt('Create a PIN for Screenlock.', '');
+        try{
+          if (pin == null){
+            checklock();
+          } else{
+            localStorage.setItem('password', pin);
+            lock();
+          }
+        } catch(e){
+          console.log(e);
+          console.log(e);
+          document.getElementById('locker').setAttribute('disabled');
+        }
+      } else {
+        console.log('password detected!');
+      }
+    }
+    checklock();
+    function signInWithGoogle() {
+        const datetime = Date();
+        fetch('https://api64.ipify.org?format=json')
+        .then(response => response.json())
+        .then(data => {
+            const ipAddress = data.ip;
+            localStorage.setItem('IP', ipAddress);
+        })
+        .catch(error => {
+            console.log(`Error: ${error}`);
+        });
+        localStorage.setItem('Signup-date', datetime);
+        const clientId = '364524252352-mueplfnejbmn0jupc9ut4j7kdsf7md8s.apps.googleusercontent.com';
+        const redirectUri = 'https://yash12007.github.io/';
+        const googleSignInUrl = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=token&scope=email%20profile`;
+        window.open(googleSignInUrl, '_self');
+    }
+    // Function to fetch user information from Google API
+    function getUserInfo(accessToken) {
+        const userInfoUrl = `https://www.googleapis.com/oauth2/v2/userinfo?access_token=${accessToken}`;
+        try{
+            localStorage.setItem('account', userInfoUrl);
+        } catch(e){
+            alert('Error while add account in your device');
+        }
+        fetch(userInfoUrl)
+            .then(response => response.json())
+            
+            .then(data => {
+                // Update the user-info element with user account information
+                const userInfoElement = document.getElementById('user-info');
+                userInfoElement.innerHTML = `
+                    <img src='${data.picture}' alt='Profile Picture' width='30' height='30' style='border-radius: 50%; margin-right: 5px;'>
+                    Welcome, ${data.name}
+                `;
+            })
+            .catch(error => console.log('Error fetching user information:', error));
+    }
+    // Function to handle the redirect after successful sign-in with Google
+    function handleGoogleSignIn() {
+        const urlParams = new URLSearchParams(window.location.hash.substr(1));
+        const accessToken = urlParams.get('access_token');
+        if (accessToken) {
+            getUserInfo(accessToken);
+        }
+    }
+    // Call handleGoogleSignIn on page load to check for access token in the URL hash
+    handleGoogleSignIn();
+    function account(){
+      showapp();
+      appname('Account Info');
+      try{
+        const account = localStorage.getItem('account');
+        if (account == null){
+            console.log('No account founded');
+            document.getElementById('content').innerHTML=`
+            Account not found!
+            <br>
+            <button class='btn' onclick='signInWithGoogle()'>Sign up with Google</button>
+            `;
+        }else{
+            fetch(account)
+            .then(response => response.json())
+            .then(data => {
+                const userInfoElement = document.getElementById('content');
+                userInfoElement.innerHTML = `
+                    <img src='${data.picture}' alt='Profile Picture' width='30' height='30' style='border-radius: 50%; margin-right: 5px;'>
+                    Welcome, ${data.name}
+                    <br>
+                    Email: ${data.email}
+                    <br>
+                    <button class='btn' onclick='signInWithGoogle()'>Switch account</button>
+                `;
+            })
+            .catch(error => console.log(`Error fetching user information: ${error}`));
+        }
+      } catch(error){
+          console.log(error);
+      }
+    }
+    try{
+        const account = localStorage.getItem('account');
+        if (account == null){
+            console.log('No account founded');
+        }else{
+            fetch(account)
+            .then(response => response.json())
+            .then(data => {
+                const userInfoElement = document.getElementById('user-info');
+                userInfoElement.innerHTML = `
+                  <img src='${data.picture}' alt='Profile Picture' width='30' height='30' style='border-radius: 50%; margin-right: 5px;'>
+                `;
+            })
+            .catch(error => console.log('Error fetching user information:', error));
+        }
+    } catch(error){
+        console.log(error);
+    }
+    function Nexus_translate(){
+      appname('Translate');
+      showapp();
+      document.getElementById('content').innerHTML=`
+      <p>Powered by Google</p>
+      <div id="translate-container">
+          <div class="input-group">
+            <textarea id="source-text" class="form-control" aria-label="With textarea" placeholder='Enter your text'></textarea>
+          </div>
+          <p>Translate to:</p>
+          <select id="target-language" class="form-select" aria-label="Default select example">
+            <option value="en">English</option>
+            <option value="es">Spanish</option>
+            <option value="fr">French</option>
+            <option value="de">German</option>
+            <option value="zh-CN">Chinese (Simplified)</option>
+            <option value="ja">Japanese</option>
+            <option value="ko">Korean</option>
+            <option value="ar">Arabic</option>
+            <option value="ru">Russian</option>
+            <option value="pt">Portuguese</option>
+            <!-- Add more language options as needed -->
+          </select>
+          <button id="translate-button" onclick='translateText()' class='btn btn-primary'>Translate</button>
+          <p>Translated Text:</p>
+          <div id="translated-text"></div>
+      </div>
+      `;
+    }
+    function translateText() {
+      const sourceText = document.getElementById("source-text").value;
+      const targetLanguage = document.getElementById("target-language").value;
+      const translatedTextContainer = document.getElementById("translated-text");
+
+      // Google Translate API URL
+      const apiUrl = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=${targetLanguage}&dt=t&q=${encodeURI(sourceText)}`;
+
+      fetch(apiUrl)
+          .then(response => response.json())
+          .then(data => {
+              const translatedText = data[0][0][0];
+              translatedTextContainer.textContent = translatedText;
+          })
+          .catch(error => console.log(error));
+    }
+    function appname(name){
+      document.getElementById('appname').innerHTML=name;
+    }
+    function Applications(){
+      showapp();
+      document.getElementById('content').innerHTML=`
+      Applications will appear here.
+      `;
+      appname('Applications');
+    }
+    function lock(){
+      document.getElementById('lock').setAttribute('style', 'top:0; left:0;');
+      
+    }
+    document.getElementById('password').addEventListener('keydown', function (event){
+      if (event.key === "Enter" || event.keyCode === 13) {
+          event.preventDefault();
+          var lock = document.getElementById('lock');
+          if (document.getElementById('password').value == localStorage.getItem('password')){
+              lock.setAttribute('style', 'position:absolute; animation: 10s lockopener;');
+              document.getElementById('password').value='';
+              document.getElementById('passstatus').innerHTML='';
+          } else{
+            document.getElementById('passstatus').innerHTML='Error: wrong password, Try again';
+            document.getElementById('password').value='';
+          }
+        }
+    });
+    function closeapp(){
+      document.getElementById('app').setAttribute('style', 'top:-50000px; left:-50000px;');
+      document.getElementById('content').innerHTML=``;
+    }
+    function maximize(){
+      document.getElementById('app').setAttribute('style', 'height:100%; top:0; left:0; bottom:0; right:0;');
+    }
+    function minimize(){
+      document.getElementById('app').setAttribute('style', 'top:-50000px; left:-50000px;');
+    }
+    function showapp(){
+      document.getElementById('app').setAttribute('style', 'top:30%; left:0;');
+    }
+    function terminal(){
+      document.getElementById('main').innerHTML=`<iframe src='https://yash12007.github.io/Terminal', width='fit-content' height='100%'>`;
+    }
+    function google(){
+      document.getElementById('main').innerHTML=`<iframe src='https://www.google.com/search?igu=1', width='fit-content' height='100%'>`;
+    }
+    function status(){
+      document.getElementById('main').innerHTML=`
+      <div style='width:100%; height:100%; top:0; left:0; position:absolute; background:black;'>
+        <div>
+          <p class="date"></p>
+          <i class="bi bi-battery-full"></i>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-battery-full" viewBox="0 0 16 16">
+            <path d="M2 6h10v4H2V6z"/>
+            <path d="M2 4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H2zm10 1a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h10zm4 3a1.5 1.5 0 0 1-1.5 1.5v-3A1.5 1.5 0 0 1 16 8z"/>
+          </svg>
+          <p id='battery'></p>
+        </div>
+        <div style='display:flex;'>
+          <button class='btn btn-success' id='wifi'>
+            <i class="bi bi-wifi"></i>
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-wifi" viewBox="0 0 16 16">
+              <path d="M15.384 6.115a.485.485 0 0 0-.047-.736A12.444 12.444 0 0 0 8 3C5.259 3 2.723 3.882.663 5.379a.485.485 0 0 0-.048.736.518.518 0 0 0 .668.05A11.448 11.448 0 0 1 8 4c2.507 0 4.827.802 6.716 2.164.205.148.49.13.668-.049z"/>
+              <path d="M13.229 8.271a.482.482 0 0 0-.063-.745A9.455 9.455 0 0 0 8 6c-1.905 0-3.68.56-5.166 1.526a.48.48 0 0 0-.063.745.525.525 0 0 0 .652.065A8.46 8.46 0 0 1 8 7a8.46 8.46 0 0 1 4.576 1.336c.206.132.48.108.653-.065zm-2.183 2.183c.226-.226.185-.605-.1-.75A6.473 6.473 0 0 0 8 9c-1.06 0-2.062.254-2.946.704-.285.145-.326.524-.1.75l.015.015c.16.16.407.19.611.09A5.478 5.478 0 0 1 8 10c.868 0 1.69.201 2.42.56.203.1.45.07.61-.091l.016-.015zM9.06 12.44c.196-.196.198-.52-.04-.66A1.99 1.99 0 0 0 8 11.5a1.99 1.99 0 0 0-1.02.28c-.238.14-.236.464-.04.66l.706.706a.5.5 0 0 0 .707 0l.707-.707z"/>
+            </svg>
+            WiFi
+          </button>
+          <button class='btn' onclick='bluetooth()' id='bluetooth'>
+            <i class="bi bi-bluetooth"></i>
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-bluetooth" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="m8.543 3.948 1.316 1.316L8.543 6.58V3.948Zm0 8.104 1.316-1.316L8.543 9.42v2.632Zm-1.41-4.043L4.275 5.133l.827-.827L7.377 6.58V1.128l4.137 4.136L8.787 8.01l2.745 2.745-4.136 4.137V9.42l-2.294 2.274-.827-.827L7.133 8.01ZM7.903 16c3.498 0 5.904-1.655 5.904-8.01 0-6.335-2.406-7.99-5.903-7.99C4.407 0 2 1.655 2 8.01 2 14.344 4.407 16 7.904 16Z"/>
+            </svg>
+            Bluetooth
+          </button>
+          <button class='btn'>
+            <i class="bi bi-airplane"></i>
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-airplane" viewBox="0 0 16 16">
+              <path d="M6.428 1.151C6.708.591 7.213 0 8 0s1.292.592 1.572 1.151C9.861 1.73 10 2.431 10 3v3.691l5.17 2.585a1.5 1.5 0 0 1 .83 1.342V12a.5.5 0 0 1-.582.493l-5.507-.918-.375 2.253 1.318 1.318A.5.5 0 0 1 10.5 16h-5a.5.5 0 0 1-.354-.854l1.319-1.318-.376-2.253-5.507.918A.5.5 0 0 1 0 12v-1.382a1.5 1.5 0 0 1 .83-1.342L6 6.691V3c0-.568.14-1.271.428-1.849Zm.894.448C7.111 2.02 7 2.569 7 3v4a.5.5 0 0 1-.276.447l-5.448 2.724a.5.5 0 0 0-.276.447v.792l5.418-.903a.5.5 0 0 1 .575.41l.5 3a.5.5 0 0 1-.14.437L6.708 15h2.586l-.647-.646a.5.5 0 0 1-.14-.436l.5-3a.5.5 0 0 1 .576-.411L15 11.41v-.792a.5.5 0 0 0-.276-.447L9.276 7.447A.5.5 0 0 1 9 7V3c0-.432-.11-.979-.322-1.401C8.458 1.159 8.213 1 8 1c-.213 0-.458.158-.678.599Z"/>
+            </svg>
+            Aeroplane mode
+          </button>
+        </div>
+        <div style='display:flex;'>
+          <button class='btn'>
+            <i class="bi bi-phone"></i>
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-phone" viewBox="0 0 16 16">
+              <path d="M11 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h6zM5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H5z"/>
+              <path d="M8 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+            </svg>
+            Oriation
+          </button>
+          <button class='btn' onclick='poweroff()'>
+            <i class="bi bi-power"></i>
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-power" viewBox="0 0 16 16">
+              <path d="M7.5 1v7h1V1h-1z"/>
+              <path d="M3 8.812a4.999 4.999 0 0 1 2.578-4.375l-.485-.874A6 6 0 1 0 11 3.616l-.501.865A5 5 0 1 1 3 8.812z"/>
+            </svg>
+            Power off
+          </button>
+          <button class='btn' onclick='reboot()'>
+            <i class="bi bi-arrow-clockwise"></i>
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z"/>
+              <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z"/>
+            </svg>
+            Reboot
+          </button>
+        </div>
+      </div>
+      `;
+    }
+    function info(){
+      document.getElementById('main').innerHTML=`<iframe src='https://yash12007.github.io/Max', width='fit-content' height='100%'>`;
+    }
+    function battery(){
+      if ('getBattery' in navigator) {
+        navigator.getBattery().then(function(battery) {
+          updateBatteryStatus(battery);
+          battery.addEventListener('chargingchange', function() {
+            updateBatteryStatus(battery);
+          });
+          battery.addEventListener('levelchange', function() {
+            updateBatteryStatus(battery);
+          });
+          function updateBatteryStatus(battery) {
+            const batteryStatus = document.getElementById('battery')
+            const percentage = (battery.level * 100).toFixed(2) + '%';
+            const charging = battery.charging ? 'Charging' : 'Not Charging';
+            batteryStatus.innerHTML = `${percentage} (${charging})`;
+          }
+        });
+      } else {
+        const batteryStatus = document.getElementById('battery');
+        batteryStatus.innerHTML = 'Error to calculate.';
+      }
+      setTimeout(battery, 1000);
+    }
+    battery();
+    function home(){
+      document.getElementById('main').innerHTML=`
+      <div style="display: grid; place-items: center;">
+        <p style="font-size: 72px;" class="time">00:00</p>
+        <p class="date">Fri, 1 Jan 2023</p>
+      </div>
+      <div style="display: grid; place-items: center;">
+        <h5 id="welcome-text">Nexus OS</h5>
+        <p>powered by Yash12007</p>
+      </div>
+      `;
+      document.getElementById('app').setAttribute('style', 'top:-50000px; left:-50000px;');
+    }
+    function back(){
+      document.getElementById('main').innerHTML=`
+      <div style="display: grid; place-items: center;">
+        <p style="font-size: 72px;" class="time">00:00</p>
+        <p class="date">Fri, 1 Jan 2023</p>
+      </div>
+      <div style="display: grid; place-items: center;">
+        <h5 id="welcome-text">Nexus OS</h5>
+        <p>powered by Yash12007</p>
+      </div>
+      `;
+    }
+    function recent() {
+      showapp();
+      appname('Recent');
+      document.getElementById('content').innerHTML=`
+      <i class="bi bi-layers"></i>
+      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-layers" viewBox="0 0 16 16">
+        <path d="M8.235 1.559a.5.5 0 0 0-.47 0l-7.5 4a.5.5 0 0 0 0 .882L3.188 8 .264 9.559a.5.5 0 0 0 0 .882l7.5 4a.5.5 0 0 0 .47 0l7.5-4a.5.5 0 0 0 0-.882L12.813 8l2.922-1.559a.5.5 0 0 0 0-.882l-7.5-4zm3.515 7.008L14.438 10 8 13.433 1.562 10 4.25 8.567l3.515 1.874a.5.5 0 0 0 .47 0l3.515-1.874zM8 9.433 1.562 6 8 2.567 14.438 6 8 9.433z"/>
+      </svg>
+      No recents
+      `;
+    }
+    function updateTimeAndDate(className) {
+      const currentTime = new Date();
+      if (className === 'time') {
+          const hours = String(currentTime.getHours()).padStart(2, '0');
+          const minutes = String(currentTime.getMinutes()).padStart(2, '0');
+          const timeString = hours + ':' + minutes;
+          
+          const elements = document.querySelectorAll('.' + className);
+          elements.forEach(function(element) {
+              element.textContent = timeString;
+          });
+      } else if (className === 'date') {
+          const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+          const dayOfWeek = daysOfWeek[currentTime.getDay()];
+          const day = String(currentTime.getDate()).padStart(2, '0');
+          const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+          const month = months[currentTime.getMonth()];
+          const year = currentTime.getFullYear();
+          const dateString = dayOfWeek + ', ' + day + ' ' + month + ' ' + year;
+          
+          const elements = document.querySelectorAll('.' + className);
+          elements.forEach(function(element) {
+              element.textContent = dateString;
+          });
+      }
+    }
+    updateTimeAndDate('time');
+    updateTimeAndDate('date');
+    setInterval(function() {
+        updateTimeAndDate('time');
+        updateTimeAndDate('date');
+    }, 1000);
+
+    function speak(audio) {
+      var utter = new SpeechSynthesisUtterance(audio);
+      window.speechSynthesis.speak(utter);
+    }
+    //speak('Welcome to Yash12007!');
+
+    function changetheme(){
+      var theme = document.body.getAttribute('data-bs-theme');
+      if (theme == 'dark'){
+        light();
+      } else{
+        dark();
+      }
+    }
+    function dark(){
+      document.getElementById('theme').innerHTML=`
+      <i class="bi bi-brightness-high"></i>
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-brightness-high" viewBox="0 0 16 16">
+        <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+      </svg>
+      Light
+      `;
+      document.body.setAttribute('data-bs-theme', 'dark');
+    }
+    function light(){
+      document.getElementById('theme').innerHTML=`
+      <i class="bi bi-moon-stars"></i>
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-moon-stars" viewBox="0 0 16 16">
+        <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278zM4.858 1.311A7.269 7.269 0 0 0 1.025 7.71c0 4.02 3.279 7.276 7.319 7.276a7.316 7.316 0 0 0 5.205-2.162c-.337.042-.68.063-1.029.063-4.61 0-8.343-3.714-8.343-8.29 0-1.167.242-2.278.681-3.286z"/>
+        <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+      </svg>
+      Dark
+      `;
+      document.body.setAttribute('data-bs-theme', '');
+    }
+  </script>
+</html>
