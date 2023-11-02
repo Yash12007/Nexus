@@ -7,6 +7,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   </head>
   <style>
+    #content{
+      overflow: auto;
+      width: 100%;
+      height: 75%;
+    }
     body{
       width: 100%;
       overflow: hidden;
@@ -210,7 +215,7 @@
           <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
         </svg>
       </button>
-      <button class="btn"  class="btn" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+      <button class="btn" id="settings" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
         <i class="bi bi-gear"></i>
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gear" viewBox="0 0 16 16">
           <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z"/>
@@ -274,6 +279,18 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
   </body>
   <script>
+    function NovaStreamIDE(){
+      closeapp();
+      document.getElementById('main').innerHTML=`<iframe src='https://yash12007.github.io/NovaStream' width='fit-content' height='100%'>`;
+    }
+    function cleardata(){
+      if(confirm('Are you sure want to delete all data stored by Nexus OS?')==true){
+        localStorage.clear();
+      }
+    }
+    function settings(){
+      document.getElementById('settings').click();
+    }
     function poweroff(){
       document.getElementById('powerscreen').setAttribute('style', 'top:0; left:0;');
       setTimeout(close(), 5000);
@@ -475,13 +492,150 @@
     function Applications(){
       showapp();
       document.getElementById('content').innerHTML=`
-      Applications will appear here.
+      <table class='table'>
+            <thead>
+                <tr>
+                    <th scope='col'>Sr.no.</th>
+                    <th scope='col'>Icon</th>
+                    <th scope='col'>Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr onclick='google()'>
+                    <th scope='row'>1</th>
+                    <td>
+                        <i class='bi bi-search'></i>
+                        <svg id='ico'  xmlns='http://www.w3.org/2000/svg'width='16'height='16'fill='currentColor'class='bi bi-search'viewBox='0 0 16 16'>
+                            <path d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'/>
+                        </svg></td>
+                    <td>Phonix Browser</td>
+                </tr>
+                <tr onclick='terminal()'>
+                    <th scope='row'>2</th>
+                    <td>
+                        <i class='bi bi-terminal'></i>
+                        <svg id='ico'  xmlns='http://www.w3.org/2000/svg'width='16'height='16'fill='currentColor'class='bi bi-terminal'viewBox='0 0 16 16'>
+                            <path d='M6 9a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3A.5.5 0 0 1 6 9zM3.854 4.146a.5.5 0 1 0-.708.708L4.793 6.5 3.146 8.146a.5.5 0 1 0 .708.708l2-2a.5.5 0 0 0 0-.708l-2-2z'/>
+                            <path d='M2 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2H2zm12 1a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1h12z'/>
+                        </svg>
+                    </td>
+                    <td>Terminal</td>
+                </tr>
+                <tr onclick='camera()'>
+                    <th scope='row'>3</th>
+                    <td>
+                        <i class='bi bi-camera'></i>
+                        <svg id='ico'  xmlns='http://www.w3.org/2000/svg'width='16'height='16'fill='currentColor'class='bi bi-camera'viewBox='0 0 16 16'>
+                            <path d='M15 12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h1.172a3 3 0 0 0 2.12-.879l.83-.828A1 1 0 0 1 6.827 3h2.344a1 1 0 0 1 .707.293l.828.828A3 3 0 0 0 12.828 5H14a1 1 0 0 1 1 1v6zM2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4H2z'/>
+                            <path d='M8 11a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5zm0 1a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zM3 6.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z'/>
+                        </svg>
+                    </td>
+                    <td>Camera</td>
+                </tr>
+                <tr onclick='soundRecorder()'>
+                    <th scope='row'>4</th>
+                    <td>
+                        <i class='bi bi-mic'></i>
+                        <svg id='ico'  xmlns='http://www.w3.org/2000/svg'width='16'height='16'fill='currentColor'class='bi bi-mic'viewBox='0 0 16 16'>
+                            <path d='M3.5 6.5A.5.5 0 0 1 4 7v1a4 4 0 0 0 8 0V7a.5.5 0 0 1 1 0v1a5 5 0 0 1-4.5 4.975V15h3a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1h3v-2.025A5 5 0 0 1 3 8V7a.5.5 0 0 1 .5-.5z'/>
+                            <path d='M10 8a2 2 0 1 1-4 0V3a2 2 0 1 1 4 0v5zM8 0a3 3 0 0 0-3 3v5a3 3 0 0 0 6 0V3a3 3 0 0 0-3-3z'/>
+                        </svg>
+                    </td>
+                    <td>Sound Recorder</td>
+                </tr>
+                <tr onclick='NovaStreamIDE()'>
+                    <th scope='row'>5</th>
+                    <td>
+                        <i class='bi bi-code-square'></i>
+                        <svg id='ico'  xmlns='http://www.w3.org/2000/svg'width='16'height='16'fill='currentColor'class='bi bi-code-square'viewBox='0 0 16 16'>
+                            <path d='M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z'/>
+                            <path d='M6.854 4.646a.5.5 0 0 1 0 .708L4.207 8l2.647 2.646a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 0 1 .708 0zm2.292 0a.5.5 0 0 0 0 .708L11.793 8l-2.647 2.646a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708 0z'/>
+                        </svg>
+                    </td>
+                    <td>NovaStream IDE</td>
+                </tr>
+                <tr onclick='settings()'>
+                    <th scope='row'>6</th>
+                    <td>
+                        <i class='bi bi-gear'></i>
+                        <svg id='ico'  xmlns='http://www.w3.org/2000/svg'width='16'height='16'fill='currentColor'class='bi bi-gear'viewBox='0 0 16 16'>
+                            <path d='M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z'/>
+                            <path d='M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115l.094-.319z'/>
+                        </svg>
+                    </td>
+                    <td>Settings</td>
+                </tr>
+                <tr onclick='settings()'>
+                    <th scope='row'>7</th>
+                    <td>
+                        <i class='bi bi-images'></i>
+                        <svg id='ico'  xmlns='http://www.w3.org/2000/svg'width='16'height='16'fill='currentColor'class='bi bi-images'viewBox='0 0 16 16'>
+                            <path d='M4.502 9a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z'/>
+                            <path d='M14.002 13a2 2 0 0 1-2 2h-10a2 2 0 0 1-2-2V5A2 2 0 0 1 2 3a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v8a2 2 0 0 1-1.998 2zM14 2H4a1 1 0 0 0-1 1h9.002a2 2 0 0 1 2 2v7A1 1 0 0 0 15 11V3a1 1 0 0 0-1-1zM2.002 4a1 1 0 0 0-1 1v8l2.646-2.354a.5.5 0 0 1 .63-.062l2.66 1.773 3.71-3.71a.5.5 0 0 1 .577-.094l1.777 1.947V5a1 1 0 0 0-1-1h-10z'/>
+                        </svg>
+                    </td>
+                    <td>Wallpaper</td>
+                </tr>
+                <tr onclick='cleardata()'>
+                    <th scope='row'>8</th>
+                    <td>
+                        <i class='bi bi-database-slash'></i>
+                        <svg id='ico'  xmlns='http://www.w3.org/2000/svg'width='16'height='16'fill='currentColor'class='bi bi-database-slash'viewBox='0 0 16 16'>
+                            <path d='M13.879 10.414a2.501 2.501 0 0 0-3.465 3.465l3.465-3.465Zm.707.707-3.465 3.465a2.501 2.501 0 0 0 3.465-3.465Zm-4.56-1.096a3.5 3.5 0 1 1 4.949 4.95 3.5 3.5 0 0 1-4.95-4.95Z'/>
+                            <path d='M12.096 6.223A4.92 4.92 0 0 0 13 5.698V7c0 .289-.213.654-.753 1.007a4.493 4.493 0 0 1 1.753.25V4c0-1.007-.875-1.755-1.904-2.223C11.022 1.289 9.573 1 8 1s-3.022.289-4.096.777C2.875 2.245 2 2.993 2 4v9c0 1.007.875 1.755 1.904 2.223C4.978 15.71 6.427 16 8 16c.536 0 1.058-.034 1.555-.097a4.525 4.525 0 0 1-.813-.927C8.5 14.992 8.252 15 8 15c-1.464 0-2.766-.27-3.682-.687C3.356 13.875 3 13.373 3 13v-1.302c.271.202.58.378.904.525C4.978 12.71 6.427 13 8 13h.027a4.552 4.552 0 0 1 0-1H8c-1.464 0-2.766-.27-3.682-.687C3.356 10.875 3 10.373 3 10V8.698c.271.202.58.378.904.525C4.978 9.71 6.427 10 8 10c.262 0 .52-.008.774-.024a4.525 4.525 0 0 1 1.102-1.132C9.298 8.944 8.666 9 8 9c-1.464 0-2.766-.27-3.682-.687C3.356 7.875 3 7.373 3 7V5.698c.271.202.58.378.904.525C4.978 6.711 6.427 7 8 7s3.022-.289 4.096-.777ZM3 4c0-.374.356-.875 1.318-1.313C5.234 2.271 6.536 2 8 2s2.766.27 3.682.687C12.644 3.125 13 3.627 13 4c0 .374-.356.875-1.318 1.313C10.766 5.729 9.464 6 8 6s-2.766-.27-3.682-.687C3.356 4.875 3 4.373 3 4Z'/>
+                        </svg>
+                    </td>
+                    <td>Clear data</td>
+                </tr>
+                <tr onclick='media()'>
+                    <th scope='row'>9</th>
+                    <td>
+                        <i class="bi bi-music-note-list"></i>
+                        <svg id='ico'  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-music-note-list" viewBox="0 0 16 16">
+                            <path d="M12 13c0 1.105-1.12 2-2.5 2S7 14.105 7 13s1.12-2 2.5-2 2.5.895 2.5 2z"/>
+                            <path fill-rule="evenodd" d="M12 3v10h-1V3h1z"/>
+                            <path d="M11 2.82a1 1 0 0 1 .804-.98l3-.6A1 1 0 0 1 16 2.22V4l-5 1V2.82z"/>
+                            <path fill-rule="evenodd" d="M0 11.5a.5.5 0 0 1 .5-.5H4a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 .5 7H8a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 .5 3H8a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5z"/>
+                        </svg>
+                    </td>
+                    <td>Media Player</td>
+                </tr>
+                <tr onclick='imgview()'>
+                    <th scope='row'>10</th>
+                    <td>
+                        <i class="bi bi-file-earmark-image"></i>
+                        <svg id='ico'  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-image" viewBox="0 0 16 16">
+                            <path d="M6.502 7a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
+                            <path d="M14 14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5L14 4.5V14zM4 1a1 1 0 0 0-1 1v10l2.224-2.224a.5.5 0 0 1 .61-.075L8 11l2.157-3.02a.5.5 0 0 1 .76-.063L13 10V4.5h-2A1.5 1.5 0 0 1 9.5 3V1H4z"/>
+                        </svg>
+                    </td>
+                    <td>Image viewer</td>
+                </tr>
+            </tbody>
+        </table>
       `;
       appname('Applications');
     }
+    function camera() {
+      closeapp();
+      document.getElementById('main').innerHTML=`<video id='cam' width='fit-content' height='100%'></video>`;
+      const videoElement = document.getElementById('cam');
+      if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+        navigator.mediaDevices
+          .getUserMedia({ video: true })
+          .then(function (stream) {
+            videoElement.srcObject = stream;
+            videoElement.play();
+          })
+          .catch(function (error) {
+            console.error('Error accessing the camera:', error);
+          });
+      } else {
+        console.error('getUserMedia is not supported in this browser.');
+      }
+    }
     function lock(){
       document.getElementById('lock').setAttribute('style', 'top:0; left:0;');
-      
     }
     document.getElementById('password').addEventListener('keydown', function (event){
       if (event.key === "Enter" || event.keyCode === 13) {
@@ -497,6 +651,56 @@
           }
         }
     });
+    function media(){
+      closeapp();
+      document.getElementById('main').innerHTML=`
+      <video id='vid' controls autoplay width='100%' height='fit-content'></video>
+      <audio id='audio' autoplay controls></audio>
+      <div class="input-group mb-3">
+        <input type="file" class="form-control" id="media">
+      </div>
+      `;
+      const vid = document.getElementById('vid');
+      const audio = document.getElementById('audio');
+      const input = document.getElementById('media');
+      input.addEventListener('change', player);
+    }
+    function player(){
+      const vid = document.getElementById('vid');
+      const audio = document.getElementById('audio');
+      const input = document.getElementById('media');
+      if (input.files && input.files[0]) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          vid.src = e.target.result;
+          audio.src = e.target.result;
+        };
+        reader.readAsDataURL(input.files[0]);
+      }
+    }
+    function imgview(){
+      closeapp();
+      document.getElementById('main').innerHTML=`
+      <img id='imgview' width='100%' height='fit-content'>
+      <div class="input-group mb-3">
+        <input type="file" class="form-control" id="inputGroupFile02">
+      </div>
+      `;
+      const imgView = document.getElementById('imgview');
+      const input = document.getElementById('inputGroupFile02');
+      input.addEventListener('change', previewImage);
+    }
+    function previewImage() {
+      const imgView = document.getElementById('imgview');
+      const input = document.getElementById('inputGroupFile02');
+      if (input.files && input.files[0]) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          imgView.src = e.target.result;
+        };
+        reader.readAsDataURL(input.files[0]);
+      }
+    }
     function closeapp(){
       document.getElementById('app').setAttribute('style', 'top:-50000px; left:-50000px;');
       document.getElementById('content').innerHTML=``;
@@ -511,10 +715,12 @@
       document.getElementById('app').setAttribute('style', 'top:30%; left:0;');
     }
     function terminal(){
-      document.getElementById('main').innerHTML=`<iframe src='https://yash12007.github.io/Terminal', width='fit-content' height='100%'>`;
+      closeapp();
+      document.getElementById('main').innerHTML=`<iframe src='https://yash12007.github.io/Terminal' width='fit-content' height='100%'>`;
     }
     function google(){
-      document.getElementById('main').innerHTML=`<iframe src='https://www.google.com/search?igu=1', width='fit-content' height='100%'>`;
+      closeapp();
+      document.getElementById('main').innerHTML=`<iframe src='https://www.google.com/search?igu=1' width='fit-content' height='100%'>`;
     }
     function status(){
       document.getElementById('main').innerHTML=`
@@ -582,7 +788,12 @@
       `;
     }
     function info(){
+      closeapp();
       document.getElementById('main').innerHTML=`<iframe src='https://yash12007.github.io/Max', width='fit-content' height='100%'>`;
+    }
+    function soundRecorder(){
+      closeapp();
+      document.getElementById('main').innerHTML=`<iframe src='https://yash12007.github.io/Sound_Recorder/', width='fit-content' height='100%'>`;
     }
     function battery(){
       if ('getBattery' in navigator) {
