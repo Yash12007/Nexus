@@ -1,29 +1,19 @@
 # Nexus OS
-
-![License](https://img.shields.io/badge/license-GNU%20GPL%20v3.0-blue)
-![Created](https://img.shields.io/badge/created-August%2016%2C%202023-brightgreen)
-
 An open-source project named Nexus OS: An operating system for everyone. Including developers, users, beginners in coding, etc. It is created by Android webview & pywebview (only for Windows & Android)
-<br>
-This file is deployed on <a href='https://yash12007.github.io/Nexus/'>https://yash12007.github.io/Nexus/</a>
-<br>
-<br>
-LICENSE: GNU (General Public License) v3.0
-<br>
-<b>Icon</b>
-<br>
+![License](https://img.shields.io/badge/license-MIT%20license-blue)
+![Created](https://img.shields.io/badge/created-August%2016%2C%202023-brightgreen)
+This file is deployed on https://yash12007.github.io/Nexus/
+## Icon
+This icon is provided by the developer.
 <img src='https://github.com/Yash12007/Nexus/raw/main/Nexus%20OS.ico'>
-<br>
-<b>PNG</b>
-<br>
+## PNG
 <img src='https://github.com/Yash12007/Nexus/blob/main/Nexus%20OS.png?raw=true'>
-<br>
-<b>Preview of Nexus OS</b>
-<br>
-<img src='https://github.com/Yash12007/Nexus/blob/main/Untitled%20design.png?raw=true'>
-<br>
-Custom Modification-Only License
+A screenshot given while using it
 
+## Preview of Nexus OS
+<img src='https://github.com/Yash12007/Nexus/blob/main/Untitled%20design.png?raw=true'>
+
+## Custom Modification-Only License
 Version 1.0, Date: 16-08-2023
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to modify the Software for personal use or educational purposes only, without the right to distribute, sublicense, or use the modified Software for commercial purposes.
@@ -32,7 +22,7 @@ Any modified versions of the Software may not be distributed or made publicly av
 
 The original copyright holders of the Software, Yash12007, a software development company dedicated to providing high-quality software solutions to businesses and organizations of all sizes, retain all rights to distribute, sublicense, and use the Software for any purpose, including commercial purposes.
 
-About Yash12007:
+## About Yash12007:
 Welcome to Yash12007, a software development company dedicated to providing high-quality software solutions to businesses and organizations of all sizes. We are passionate about software development and strive to create innovative and intuitive software that empowers our clients to achieve their goals and streamline their operations.
 
 At Yash12007, we believe that every business deserves the best possible software solution. That's why we work closely with our clients to understand their unique needs and develop custom software solutions that are tailored to their specific requirements. We specialize in a wide range of software development services, including web and mobile application development, software integration, database design and management, and more.
@@ -44,7 +34,7 @@ At Yash12007, we understand that software development can be complex and overwhe
 Our goal is to provide our clients with software solutions that are not only effective but also affordable. We believe that quality software should be accessible to businesses of all sizes, and we are committed to providing cost-effective solutions that deliver real value to our clients.
 
 Thank you for considering Yash12007 for your software development needs. We look forward to the opportunity to work with you and help your business reach its full potential.
-
+---
 For inquiries or additional permissions, please contact:
 <a href='https://yash12007.github.io/Max/contact.html'>Contact form</a>
 
