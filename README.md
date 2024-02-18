@@ -3,15 +3,23 @@ An open-source project named Nexus OS: An operating system for everyone. Includi
 ![License](https://img.shields.io/badge/license-MIT%20license-blue)
 ![Created](https://img.shields.io/badge/created-August%2016%2C%202023-brightgreen)
 This file is deployed on https://yash12007.github.io/Nexus/
-## Icon
-This icon is provided by the developer.
-<img src='https://github.com/Yash12007/Nexus/raw/main/Nexus%20OS.ico'>
+
+## Remember: 
+  1. Nexus OS is made for everyone and everywhere for that we are creating many different kind of versions.
+  2. Only Web-based OS are free to use, Other which are paid will be appear on our official website.
+  3. For more information visit: https://www.yash12007.com/Nexus
+
 ## PNG
 <img src='https://github.com/Yash12007/Nexus/blob/main/Nexus%20OS.png?raw=true'>
 A screenshot given while using it
 
-## Preview of Nexus OS
+## Preview of Nexus OS (web-based) for Desktop users
 <img src='https://github.com/Yash12007/Nexus/blob/main/Untitled%20design.png?raw=true'>
+URL to use: https://yash12007.github.io/Nexus
+
+## Preview of Nexus OS (web-based) for Android users
+<img src='https://github.com/Yash12007/Nexus/blob/main/Screenshot%202024-02-18%20193041.png?raw=true'>
+URL to use: https://yash12007.github.io/Nexus/beta.html
 
 ## Custom Modification-Only License
 Version 1.0, Date: 16-08-2023
