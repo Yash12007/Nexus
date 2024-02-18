@@ -9,17 +9,12 @@ This file is deployed on https://yash12007.github.io/Nexus/
   2. Only Web-based OS are free to use, Other which are paid will be appear on our official website.
   3. For more information visit: https://www.yash12007.com/Nexus
 
-## PNG
-<img src='https://github.com/Yash12007/Nexus/blob/main/Nexus%20OS.png?raw=true'>
-A screenshot given while using it
-
-## Preview of Nexus OS (web-based) for Desktop users
-<img src='https://github.com/Yash12007/Nexus/blob/main/Untitled%20design.png?raw=true'>
-URL to use: https://yash12007.github.io/Nexus
-
-## Preview of Nexus OS (web-based) for Android users
-<img src='https://github.com/Yash12007/Nexus/blob/main/Screenshot%202024-02-18%20193041.png?raw=true'>
-URL to use: https://yash12007.github.io/Nexus/beta.html
+<div style="display: flex; place-items:center;">
+      <img src='https://github.com/Yash12007/Nexus/blob/main/Nexus%20OS.png?raw=true' width='100px' height='100px'>
+      <img src='https://github.com/Yash12007/Nexus/blob/main/Untitled%20design.png?raw=true' width='180px' height='100px'>
+      <img src='https://github.com/Yash12007/Nexus/blob/main/Screenshot%202024-02-18%20193041.png?raw=true' width='80px' height='100px'>
+</div>
+Also availabel for Android users: https://yash12007.github.io/Nexus/beta.html
 
 ## Custom Modification-Only License
 Version 1.0, Date: 16-08-2023
